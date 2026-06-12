@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function(){
+
+var page=this;
+
+
+/* SEARCH */
+
+page.search=function(){
+
+page.server.update();
+
+};
+
+
+/* RESET */
+
+page.clear=function(){
+
+page.searchText='';
+
+page.department='';
+
+page.status='';
+
+page.search();
+
+};
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.directory-filters{
+
+display:flex;
+
+gap:14px;
+
+align-items:center;
+
+padding:22px;
+
+margin-top:-34px;
+
+position:relative;
+
+z-index:10;
+
+background:white;
+
+border-radius:24px;
+
+box-shadow:
+0 18px 50px
+rgba(13,35,94,.08);
+
+}
+
+
+
+/* INPUT */
+
+.directory-filters input{
+
+flex:1;
+
+min-width:220px;
+
+height:54px;
+
+border:none;
+
+background:#F5F7FD;
+
+border-radius:18px;
+
+padding:0 18px;
+
+font-size:13px;
+
+outline:none;
+
+transition:.25s;
+
+}
+
+
+.directory-filters input:focus{
+
+box-shadow:
+0 0 0 3px
+rgba(47,98,245,.12);
+
+}
+
+
+
+/* SELECT */
+
+.directory-filters select{
+
+width:240px;
+
+height:54px;
+
+border:none;
+
+background:#F5F7FD;
+
+border-radius:18px;
+
+padding:0 18px;
+
+font-size:13px;
+
+outline:none;
+
+cursor:pointer;
+
+}
+
+
+
+/* BUTTON */
+
+.directory-filters button{
+
+width:150px;
+
+height:54px;
+
+border:none;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+90deg,
+#24D3A1,
+#41D4C5
+);
+
+color:white;
+
+font-size:13px;
+
+font-weight:800;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+
+.directory-filters button:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+
+
+/* LAPTOP */
+
+@media(max-width:1200px){
+
+.directory-filters{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:14px;
+
+}
+
+.directory-filters input{
+
+grid-column:
+1 / -1;
+
+}
+
+.directory-filters select,
+.directory-filters button{
+
+width:100%;
+
+}
+
+}
+
+
+
+/* TABLET */
+
+@media(max-width:768px){
+
+.directory-filters{
+
+padding:18px;
+
+margin-top:-20px;
+
+grid-template-columns:
+1fr;
+
+}
+
+.directory-filters input,
+.directory-filters select,
+.directory-filters button{
+
+width:100%;
+
+min-width:unset;
+
+}
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.directory-filters{
+
+padding:16px;
+
+border-radius:20px;
+
+}
+
+.directory-filters input,
+.directory-filters select,
+.directory-filters button{
+
+height:48px;
+
+font-size:12px;
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>directory_filters</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>directory filters</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+
+/*
+Department options
+*/
+
+data.departments=[
+
+'Architecture',
+
+'Data & Analytics',
+
+'Design',
+
+'Engineering',
+
+'Human Resources',
+
+'Infrastructure',
+
+'Operations',
+
+'Product',
+
+'Quality',
+
+'Security'
+
+];
+
+
+
+/*
+keep filters
+*/
+
+data.searchText=
+input &&
+input.searchText ||
+'';
+
+
+data.department=
+input &&
+input.department ||
+'';
+
+
+data.status=
+input &&
+input.status ||
+'';
+
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 09:25:00</sys_created_on>
+        <sys_id>9a08cf97831d8310c07df0d6feaad37f</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>directory filters</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_9a08cf97831d8310c07df0d6feaad37f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 11:16:20</sys_updated_on>
+        <template><![CDATA[<div class="directory-filters">
+
+<input
+type="text"
+placeholder="Search employees..."
+ng-model="page.searchText"
+ng-change="page.search()">
+
+
+<select
+ng-model="page.department"
+ng-change="page.search()">
+
+<option value="">
+All Departments
+</option>
+
+<option
+ng-repeat="dept in data.departments"
+value="{{dept}}">
+
+{{dept}}
+
+</option>
+
+</select>
+
+
+<select
+ng-model="page.status"
+ng-change="page.search()">
+
+<option value="">
+All Status
+</option>
+
+<option value="Active">
+Active
+</option>
+
+<option value="Inactive">
+Inactive
+</option>
+
+</select>
+
+
+<button
+ng-click="page.clear()">
+
+Reset
+
+</button>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>9a08cf97831d8310c07df0d6feaad37f</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 09:25:00</sys_created_on>
+        <sys_id>1e0883d7831d8310c07df0d6feaad3d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 09:25:00</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

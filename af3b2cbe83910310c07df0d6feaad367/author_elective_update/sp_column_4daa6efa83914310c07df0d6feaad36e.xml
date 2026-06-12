@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="DELETE">
+        <aria_label/>
+        <class_name/>
+        <order>2</order>
+        <semantic_tag/>
+        <size>4</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="2">45aa2efa83914310c07df0d6feaad355</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 17:59:37</sys_created_on>
+        <sys_id>4daa6efa83914310c07df0d6feaad36e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_column_4daa6efa83914310c07df0d6feaad36e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-09 17:59:37</sys_updated_on>
+    </sp_column>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</application>
+        <file_path/>
+        <instance_id>5a136ac0ebbfcad4cbdefceacad0cd90</instance_id>
+        <instance_name>dev282697</instance_name>
+        <name>sp_column_4daa6efa83914310c07df0d6feaad36e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column"><sp_column action="INSERT_OR_UPDATE"><aria_label/><class_name/><order>2</order><semantic_tag/><size>4</size><size_lg/><size_sm/><size_xs/><sp_row display_value="2">45aa2efa83914310c07df0d6feaad355</sp_row><sys_class_name>sp_column</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-06-09 17:59:37</sys_created_on><sys_id>4daa6efa83914310c07df0d6feaad36e</sys_id><sys_mod_count>0</sys_mod_count><sys_name>2</sys_name><sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package><sys_policy/><sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope><sys_update_name>sp_column_4daa6efa83914310c07df0d6feaad36e</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-06-09 17:59:37</sys_updated_on></sp_column></record_update>]]></payload>
+        <payload_hash>-2031400683</payload_hash>
+        <record_name>2</record_name>
+        <reverted_from/>
+        <source>bb3b2cbe83910310c07df0d6feaad3bb</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 17:59:37</sys_created_on>
+        <sys_id>8daa6efa83914310c07df0d6feaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ead8a38690000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-09 17:59:37</sys_updated_on>
+        <type>Column</type>
+        <update_guid>4daa6efa3f9143105662e599ad893070</update_guid>
+        <update_guid_history>4daa6efa3f9143105662e599ad893070:-2031400683</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="2">8a74b6fe83d14310c07df0d6feaad3a8</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 18:42:33</sys_created_on>
+        <sys_db_object display_value="" name="sp_column">sp_column</sys_db_object>
+        <sys_id>96f80aad3a5846c08ae09ae67c527944</sys_id>
+        <sys_metadata>4daa6efa83914310c07df0d6feaad36e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_scope_delete display_value="">2bfc7689130e47efa9643babe13d2c01</sys_scope_delete>
+        <sys_update_name>sp_column_4daa6efa83914310c07df0d6feaad36e</sys_update_name>
+        <sys_update_version display_value="sp_column_4daa6efa83914310c07df0d6feaad36e">8daa6efa83914310c07df0d6feaad371</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-09 18:42:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

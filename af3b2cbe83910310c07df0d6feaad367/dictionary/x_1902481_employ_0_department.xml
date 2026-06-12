@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="c43d20f283d10310c07df0d6feaad374" label="Department" max_length="40" name="x_1902481_employ_0_department" type="collection">
+        <element label="Company" max_length="32" name="company" reference="x_1902481_employ_0_company" type="reference"/>
+        <element label="Description" max_length="40" name="description" type="string"/>
+        <element label="Department Head" max_length="40" name="department_head" type="string"/>
+        <element label="Department Name" max_length="40" name="department_name" type="string"/>
+        <index name="index">
+            <element name="company"/>
+        </index>
+    </element>
+</database>

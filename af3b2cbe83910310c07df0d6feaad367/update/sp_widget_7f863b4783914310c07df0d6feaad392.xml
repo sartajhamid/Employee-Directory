@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.hero{
+
+background:
+linear-gradient(
+135deg,
+#08215D,
+#2754C8,
+#4F78EA
+);
+
+border-radius:34px;
+
+padding:56px;
+
+position:relative;
+
+overflow:hidden;
+
+color:white;
+
+min-height:380px;
+
+}
+
+
+
+/* OVERLAY */
+
+.overlay{
+
+position:absolute;
+
+right:-120px;
+
+top:-80px;
+
+width:480px;
+
+height:480px;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,.06);
+
+}
+
+
+
+/* CONTENT */
+
+.hero-content{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+.left{
+
+max-width:620px;
+
+}
+
+
+
+/* BADGE */
+
+.badge{
+
+display:inline-block;
+
+padding:8px 16px;
+
+background:
+rgba(255,255,255,.12);
+
+border-radius:999px;
+
+font-size:10px;
+
+font-weight:800;
+
+margin-bottom:18px;
+
+}
+
+
+
+/* TITLE */
+
+h1{
+
+font-size:50px;
+
+line-height:1;
+
+font-weight:900;
+
+margin-bottom:22px;
+
+}
+
+
+
+/* TEXT */
+
+p{
+
+font-size:17px;
+
+opacity:.92;
+
+max-width:560px;
+
+margin-bottom:30px;
+
+line-height:1.7;
+
+}
+
+
+
+/* ACTIONS */
+
+.actions{
+
+display:flex;
+
+gap:14px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+/* BACK */
+
+.back-btn{
+
+height:50px;
+
+padding:0 28px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:16px;
+
+background:
+rgba(255,255,255,.12);
+
+backdrop-filter:
+blur(14px);
+
+text-decoration:none;
+
+color:white;
+
+font-size:13px;
+
+font-weight:800;
+
+transition:.25s;
+
+}
+
+
+.back-btn:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+
+
+/* DIRECTORY */
+
+.primary{
+
+height:50px;
+
+padding:0 30px;
+
+border:none;
+
+border-radius:16px;
+
+background:#33D6A6;
+
+color:white;
+
+font-size:13px;
+
+font-weight:800;
+
+cursor:pointer;
+
+}
+
+
+
+/* RIGHT */
+
+.right{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+
+
+/* STATS */
+
+.stat{
+
+background:
+rgba(255,255,255,.12);
+
+backdrop-filter:blur(14px);
+
+padding:24px;
+
+border-radius:22px;
+
+min-width:220px;
+
+}
+
+
+
+.value{
+
+font-size:38px;
+
+font-weight:900;
+
+}
+
+
+
+.label{
+
+font-size:14px;
+
+opacity:.9;
+
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero{
+
+padding:42px;
+
+}
+
+.hero-content{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:36px;
+
+}
+
+h1{
+
+font-size:36px;
+
+}
+
+p{
+
+font-size:14px;
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+.actions{
+
+justify-content:center;
+
+}
+
+.right{
+
+width:100%;
+
+align-items:center;
+
+}
+
+.stat{
+
+width:100%;
+
+max-width:260px;
+
+}
+
+}
+
+
+
+@media(max-width:600px){
+
+.hero{
+
+padding:30px 20px;
+
+}
+
+h1{
+
+font-size:30px;
+
+}
+
+p{
+
+font-size:13px;
+
+}
+
+.back-btn,
+.primary{
+
+width:100%;
+
+}
+
+.overlay{
+
+width:280px;
+
+height:280px;
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>dashboard_hero</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>dashboard hero</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+data.totalEmployees=0;
+data.totalDepartments=0;
+
+/* Employees */
+
+var emp =
+new GlideAggregate(
+'x_1902481_employ_0_employee'
+);
+
+emp.addAggregate('COUNT');
+emp.query();
+
+if(emp.next()){
+
+data.totalEmployees =
+emp.getAggregate('COUNT');
+
+}
+
+/* Departments */
+
+var dept =
+new GlideAggregate(
+'x_1902481_employ_0_department'
+);
+
+dept.addAggregate('COUNT');
+
+dept.query();
+
+if(dept.next()){
+
+data.totalDepartments =
+dept.getAggregate('COUNT');
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 18:09:47</sys_created_on>
+        <sys_id>7f863b4783914310c07df0d6feaad392</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>dashboard hero</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_7f863b4783914310c07df0d6feaad392</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 18:30:41</sys_updated_on>
+        <template><![CDATA[<div class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<div class="left">
+
+<div class="badge">
+EMPLOYEE VAULT
+</div>
+
+<h1>
+Build. Manage.
+Track Employees.
+</h1>
+
+<p>
+Manage employees, departments and organization
+structure from one unified workspace.
+</p>
+
+<div class="actions">
+
+<a
+class="back-btn"
+href="javascript:history.back()">
+
+← Back
+
+</a>
+
+<button class="primary">
+<a
+href="/ev?id=employee_directory">
+Employee Directory
+</a>
+</button>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="stat">
+
+<div class="value">
+{{data.totalEmployees}}
+</div>
+
+<div class="label">
+Employees
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="value">
+{{data.totalDepartments}}
+</div>
+
+<div class="label">
+Departments
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>7f863b4783914310c07df0d6feaad392</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 18:09:47</sys_created_on>
+        <sys_id>3f863b4783914310c07df0d6feaad397</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 18:09:47</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

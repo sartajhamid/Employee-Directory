@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <aria_label/>
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Employee Directory - Container 3</name>
+        <order>3</order>
+        <semantic_tag/>
+        <sp_page display_value="employee_directory">1209f63683154310c07df0d6feaad3fe</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 09:27:57</sys_created_on>
+        <sys_id>29b80b1b831d8310c07df0d6feaad31d</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Employee Directory - Container 3</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_container_29b80b1b831d8310c07df0d6feaad31d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 19:23:34</sys_updated_on>
+        <title/>
+        <width>container-fluid</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</application>
+        <file_path/>
+        <instance_id>5a136ac0ebbfcad4cbdefceacad0cd90</instance_id>
+        <instance_name>dev282697</instance_name>
+        <name>sp_container_29b80b1b831d8310c07df0d6feaad31d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><aria_label/><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Employee Directory - Container 3</name><order>3</order><semantic_tag/><sp_page display_value="employee_directory">1209f63683154310c07df0d6feaad3fe</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-06-11 09:27:57</sys_created_on><sys_id>29b80b1b831d8310c07df0d6feaad31d</sys_id><sys_mod_count>4</sys_mod_count><sys_name>Employee Directory - Container 3</sys_name><sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package><sys_policy/><sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope><sys_update_name>sp_container_29b80b1b831d8310c07df0d6feaad31d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-06-11 19:23:34</sys_updated_on><title/><width>container-fluid</width></sp_container></record_update>]]></payload>
+        <payload_hash>-508636093</payload_hash>
+        <record_name>Employee Directory - Container 3</record_name>
+        <reverted_from/>
+        <source>bb3b2cbe83910310c07df0d6feaad3bb</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 19:23:34</sys_created_on>
+        <sys_id>9a01d127835dc310c07df0d6feaad317</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19eb823cc190000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 19:23:34</sys_updated_on>
+        <type>Container</type>
+        <update_guid>5a01d1273f5dc31076f108fe5cb88016</update_guid>
+        <update_guid_history>5a01d1273f5dc31076f108fe5cb88016:-508636093,9b6011e33c5dc310b8ef55c969e33513:-1887040732,b23059a3705dc310174ba6f028fde44f:1029521925,4a29c75b071d8310871d973333664658:-1887040732,6db80b1b911d83105aed68314f0c401f:-1408786431</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Employee Directory - Container 3">cbb11967835dc310c07df0d6feaad3f7</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 19:26:37</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>35b41031144f4f58801d5b8216bb7559</sys_id>
+        <sys_metadata>29b80b1b831d8310c07df0d6feaad31d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Employee Directory - Container 3</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_scope_delete display_value="">2bfc7689130e47efa9643babe13d2c01</sys_scope_delete>
+        <sys_update_name>sp_container_29b80b1b831d8310c07df0d6feaad31d</sys_update_name>
+        <sys_update_version display_value="sp_container_29b80b1b831d8310c07df0d6feaad31d">9a01d127835dc310c07df0d6feaad317</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 19:26:37</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

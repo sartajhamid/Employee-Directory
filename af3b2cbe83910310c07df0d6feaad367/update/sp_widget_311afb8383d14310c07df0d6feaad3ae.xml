@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.metric-card{
+
+background:#FFFFFF;
+
+height:190px;
+
+border-radius:28px;
+
+padding:26px;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+0 14px 40px rgba(0,0,0,.06);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+/* top row */
+.top{
+
+display:flex;
+
+align-items:center;
+
+gap:24px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+/* colored left border */
+.department{
+border-left:5px solid #08B77B;
+}
+
+.active{
+border-left:5px solid #FDB022;
+}
+
+.inactive{
+border-left:5px solid #A259FF;
+}
+
+/* icon */
+.metric-icon{
+
+width:78px;
+
+height:78px;
+
+min-width:78px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
+}
+
+.department .metric-icon{
+background:#DCF8EA;
+}
+
+.active .metric-icon{
+background:#FFF2D8;
+}
+
+.inactive .metric-icon{
+background:#F2E8FF;
+}
+
+/* right section */
+
+.metric-info{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+.metric-value{
+
+font-size:62px;
+
+font-weight:900;
+
+color:#07195A;
+
+line-height:1;
+
+margin-bottom:8px;
+
+}
+
+.metric-title{
+
+font-size:22px;
+
+font-weight:800;
+
+color:#6D7CA7;
+
+}
+
+.metric-sub{
+
+margin-left:102px;
+
+margin-top:6px;
+
+font-size:14px;
+
+color:#9AA5C2;
+
+position:relative;
+
+z-index:2;
+
+}
+
+/* decorative circle */
+
+.bg-circle{
+
+position:absolute;
+
+right:-55px;
+
+bottom:-55px;
+
+width:170px;
+
+height:170px;
+
+border-radius:50%;
+
+opacity:.08;
+
+}
+
+.department .bg-circle{
+background:#00B87A;
+}
+
+.active .bg-circle{
+background:#FFB020;
+}
+
+.inactive .bg-circle{
+background:#A259FF;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>dashboard_inactive_emp_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>dashboard inactive emp widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+data.total = 0;
+
+var gr =
+new GlideAggregate(
+'x_1902481_employ_0_employee'
+);
+
+gr.addQuery(
+'status',
+'inactive'
+);
+
+gr.addAggregate(
+'COUNT'
+);
+
+gr.query();
+
+if(gr.next()){
+
+data.total =
+parseInt(
+gr.getAggregate('COUNT'),
+10
+);
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 18:25:12</sys_created_on>
+        <sys_id>311afb8383d14310c07df0d6feaad3ae</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>dashboard inactive emp widget</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_311afb8383d14310c07df0d6feaad3ae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 18:48:39</sys_updated_on>
+        <template><![CDATA[<div class="metric-card inactive">
+
+<div class="top">
+
+<div class="metric-icon">
+]]>🔴
+<![CDATA[</div>
+
+<div class="metric-value">
+{{data.total}}
+</div>
+
+</div>
+
+<div class="metric-title">
+Inactive Employees
+</div>
+
+<div class="metric-sub">
+Need attention
+</div>
+
+<div class="bg-circle"></div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>311afb8383d14310c07df0d6feaad3ae</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 18:25:12</sys_created_on>
+        <sys_id>b51afb8383d14310c07df0d6feaad3b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 18:25:12</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

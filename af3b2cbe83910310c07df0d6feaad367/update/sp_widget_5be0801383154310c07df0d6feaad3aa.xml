@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.quick-card{
+
+background:
+linear-gradient(
+135deg,
+#1637BA,
+#3A63FF
+);
+
+border-radius:30px;
+
+padding:34px;
+
+}
+
+.quick-card h2{
+
+margin-bottom:28px;
+
+}
+
+
+.action-btn{
+
+display:block;
+
+width:100%;
+
+padding:18px;
+
+margin-bottom:18px;
+
+text-align:center;
+
+background:white;
+
+border-radius:18px;
+
+font-weight:800;
+
+color:#173A98!important;
+
+text-decoration:none!important;
+
+}
+
+.action-btn:hover{
+
+transform:translateY(-2px);
+
+}
+.quick-card{
+
+background:
+linear-gradient(
+135deg,
+#1637BA,
+#3A63FF
+);
+
+border-radius:30px;
+
+padding:36px;
+
+box-sizing:border-box;
+
+position:sticky;
+
+top:24px;
+
+}
+
+.quick-card h2{
+
+margin-bottom:36px;
+
+}
+
+.quick-actions{
+
+margin-top:30px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>dashboard_quick_actions</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>dashboard quick actions</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 18:55:04</sys_created_on>
+        <sys_id>5be0801383154310c07df0d6feaad3aa</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>dashboard quick actions</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_5be0801383154310c07df0d6feaad3aa</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 19:36:37</sys_updated_on>
+        <template><![CDATA[<div class="quick-card">
+
+<h2>Quick Actions</h2>
+
+<a
+class="action-btn"
+href="/x_1902481_employ_0_employee_list.do">
+➕ Add Employee
+</a>
+
+<a
+class="action-btn"
+href="?id=employee_directory">
+]]>👥<![CDATA[ Employee Directory
+</a>
+
+<a
+class="action-btn"
+href="/x_1902481_employ_0_department_list.do">
+]]>🏢<![CDATA[ Departments
+</a>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>5be0801383154310c07df0d6feaad3aa</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 18:55:04</sys_created_on>
+        <sys_id>dfe0801383154310c07df0d6feaad3ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 18:55:04</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

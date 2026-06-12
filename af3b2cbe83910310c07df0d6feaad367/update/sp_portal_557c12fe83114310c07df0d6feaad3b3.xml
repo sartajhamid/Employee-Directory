@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <alternate_portal/>
+        <communication_channels/>
+        <css_variables>.panel{
+background:transparent!important;
+border:none!important;
+box-shadow:none!important;
+}
+
+.list-group{
+padding:20px!important;
+}
+
+.list-group-item{
+position:relative;
+background:linear-gradient(90deg,#244C9A,#4472D8)!important;
+color:white!important;
+padding:28px 34px!important;
+margin-bottom:24px!important;
+border-radius:22px!important;
+min-height:260px!important;
+}
+
+/* Employee name */
+
+.list-group-item&gt;a:first-child{
+
+display:block!important;
+
+font-size:42px!important;
+
+font-weight:800!important;
+
+margin-bottom:28px!important;
+
+color:white!important;
+
+text-decoration:none!important;
+
+}
+
+/* Details */
+
+.list-group-item small{
+
+display:block!important;
+
+font-size:20px!important;
+
+line-height:2.2!important;
+
+color:#F5F8FF!important;
+
+white-space:pre-line!important;
+
+}
+
+.list-group-item small::before{
+content:none!important;
+}
+
+.list-group-item small *::before{
+content:none!important;
+}
+
+/* REAL clickable overlay */
+
+.list-group-item&gt;a:first-child{
+
+position:static!important;
+
+}
+
+.list-group-item&gt;a:first-child::after{
+
+content:"👁 View Record";
+
+position:absolute;
+
+right:30px;
+
+bottom:26px;
+
+width:170px;
+
+height:56px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.18);
+
+font-size:18px;
+
+font-weight:700;
+
+color:white;
+
+cursor:pointer;
+
+pointer-events:auto;
+
+}
+
+/* Title */
+
+.panel-title{
+
+font-size:34px!important;
+
+font-weight:800!important;
+
+padding-bottom:18px;
+
+}
+</css_variables>
+        <dark_theme/>
+        <default>false</default>
+        <embeddable_macroponents/>
+        <enable_ais>false</enable_ais>
+        <enable_certificate_based_authentication>false</enable_certificate_based_authentication>
+        <enable_embeddables>false</enable_embeddables>
+        <enable_favorites>false</enable_favorites>
+        <hide_portal_name>false</hide_portal_name>
+        <homepage display_value="employee_dashboard">81edde7283514310c07df0d6feaad322</homepage>
+        <icon/>
+        <inactive>false</inactive>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page/>
+        <logo/>
+        <logo_alt_text>Employee Vault</logo_alt_text>
+        <notfound_page/>
+        <quick_start_config/>
+        <rtl_enabled>false</rtl_enabled>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <search_application/>
+        <search_results_configuration/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu/>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 17:00:54</sys_created_on>
+        <sys_id>557c12fe83114310c07df0d6feaad3b3</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>Employee Vault</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_portal_557c12fe83114310c07df0d6feaad3b3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 19:34:50</sys_updated_on>
+        <theme display_value="Stock - High Contrast">f84873986711320023c82e08f585ef6a</theme>
+        <title>Employee Vault</title>
+        <ts_index_group/>
+        <url_suffix>ev</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=557c12fe83114310c07df0d6feaad3b3"/>
+</record_update>

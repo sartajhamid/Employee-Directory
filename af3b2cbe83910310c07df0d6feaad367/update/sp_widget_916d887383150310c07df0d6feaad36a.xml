@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.dept-profile{
+
+padding-bottom:40px;
+
+}
+
+
+
+/* HERO */
+
+.hero{
+
+position:relative;
+
+overflow:hidden;
+
+min-height:320px;
+
+padding:58px 70px;
+
+border-radius:36px;
+
+background:
+linear-gradient(
+135deg,
+#071733,
+#1D46D5
+);
+
+display:flex;
+
+justify-content:
+space-between;
+
+align-items:
+flex-start;
+
+color:white;
+
+}
+
+
+
+.overlay{
+
+position:absolute;
+
+right:-120px;
+
+top:-100px;
+
+width:480px;
+
+height:480px;
+
+border-radius:50%;
+
+background:
+rgba(
+255,
+255,
+255,
+.08
+);
+
+}
+
+
+
+/* LEFT */
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:760px;
+
+padding-top:20px;
+
+}
+
+
+
+/* TITLE */
+
+.hero h1{
+
+margin:0;
+
+font-size:64px;
+
+font-weight:900;
+
+line-height:1;
+
+}
+
+
+
+/* DESCRIPTION */
+
+.subtitle{
+
+margin-top:26px;
+
+font-size:20px;
+
+line-height:1.8;
+
+opacity:.92;
+
+max-width:760px;
+
+}
+
+
+
+/* BUTTONS MOVED BELOW TITLE */
+
+.hero-top{
+
+display:flex;
+
+gap:18px;
+
+align-items:center;
+
+margin-top:36px;
+
+}
+
+
+
+.back-btn{
+
+width:150px;
+
+height:56px;
+
+border:none;
+
+border-radius:18px;
+
+background:
+rgba(
+255,
+255,
+255,
+.12
+);
+
+color:white;
+
+font-size:18px;
+
+font-weight:800;
+
+cursor:pointer;
+
+}
+
+
+
+.badge{
+
+height:56px;
+
+padding:0 28px;
+
+display:flex;
+
+align-items:center;
+
+border-radius:999px;
+
+background:
+rgba(
+255,
+255,
+255,
+.12
+);
+
+font-size:18px;
+
+font-weight:800;
+
+}
+
+
+
+/* RIGHT ICON */
+
+.avatar{
+
+width:170px;
+
+height:170px;
+
+border-radius:40px;
+
+background:
+rgba(
+255,
+255,
+255,
+.10
+);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:82px;
+
+position:relative;
+
+z-index:2;
+
+margin-top:70px;
+
+margin-right:18px;
+
+flex-shrink:0;
+
+}
+
+
+
+/* DETAILS */
+
+.content-grid{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:28px;
+
+margin-top:34px;
+
+}
+
+
+
+.card{
+
+background:white;
+
+border-radius:28px;
+
+padding:32px;
+
+}
+
+
+
+.card h2{
+
+margin-bottom:24px;
+
+color:#0B2A79;
+
+font-size:22px;
+
+}
+
+
+
+/* FIELD */
+
+.field{
+
+padding:24px;
+
+background:#F5F7FD;
+
+border-radius:18px;
+
+margin-bottom:18px;
+
+}
+
+
+
+.field label{
+
+display:block;
+
+font-size:12px;
+
+margin-bottom:10px;
+
+color:#666;
+
+}
+
+
+
+.field div{
+
+font-size:18px;
+
+font-weight:800;
+
+color:#0B2A79;
+
+}
+
+
+
+/* MEMBERS */
+
+.member{
+
+display:flex;
+
+gap:18px;
+
+padding:18px;
+
+background:#F5F7FD;
+
+border-radius:18px;
+
+margin-bottom:14px;
+
+}
+
+
+
+.member-avatar{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+background:#2F62F5;
+
+color:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:26px;
+
+}
+
+
+
+.member-name{
+
+font-size:18px;
+
+font-weight:800;
+
+}
+
+
+
+.member-role{
+
+margin-top:6px;
+
+color:#7283A6;
+
+}
+
+
+
+.empty{
+
+padding:24px;
+
+text-align:center;
+
+color:#7B89A5;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column;
+
+padding:34px;
+
+gap:26px;
+
+}
+
+
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+
+
+.hero-top{
+
+flex-wrap:wrap;
+
+margin-top:24px;
+
+}
+
+
+
+.avatar{
+
+margin:auto;
+
+width:130px;
+
+height:130px;
+
+font-size:64px;
+
+}
+
+
+
+.content-grid{
+
+grid-template-columns:
+1fr;
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>department_profile</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>department profile</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+data.department={};
+
+data.members=[];
+
+var id =
+$sp.getParameter(
+'sys_id'
+);
+
+if(!id)
+return;
+
+var dep =
+new GlideRecord(
+'x_1902481_employ_0_department'
+);
+
+if(dep.get(id)){
+
+data.department={
+
+name:
+dep.department_name.toString(),
+
+description:
+dep.description.toString(),
+
+head:
+dep.getDisplayValue(
+'department_head'
+)||'-',
+
+company:
+dep.getDisplayValue(
+'company'
+)||'-',
+
+employee_count:0
+
+};
+
+var ga =
+new GlideAggregate(
+'x_1902481_employ_0_employee'
+);
+
+ga.addQuery(
+'department',
+id
+);
+
+ga.addAggregate(
+'COUNT'
+);
+
+ga.query();
+
+if(ga.next()){
+
+data.department.employee_count=
+ga.getAggregate(
+'COUNT'
+);
+
+}
+
+var emp =
+new GlideRecord(
+'x_1902481_employ_0_employee'
+);
+
+emp.addQuery(
+'department',
+id
+);
+
+emp.query();
+
+while(emp.next()){
+
+data.members.push({
+
+name:
+
+emp.first_name+
+
+' '+
+
+emp.last_name,
+
+designation:
+
+emp.designation+
+
+'',
+
+initial:
+
+(
+
+emp.first_name+
+''
+
+).substring(
+0,
+1
+)
+
+});
+
+}
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 09:06:31</sys_created_on>
+        <sys_id>916d887383150310c07df0d6feaad36a</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>department profile</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_916d887383150310c07df0d6feaad36a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 09:59:18</sys_updated_on>
+        <template><![CDATA[<div class="dept-profile">
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="overlay"></div>
+
+
+<div class="hero-content">
+
+<h1>
+
+{{data.department.name}}
+
+</h1>
+
+
+<div class="subtitle">
+
+{{data.department.description}}
+
+</div>
+
+
+<div class="hero-top">
+
+<button
+class="back-btn"
+onclick="history.back()">
+
+← Back
+
+</button>
+
+
+<div class="badge">
+
+{{data.department.employee_count}}
+Employees
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="avatar">
+
+]]>🏢
+
+<![CDATA[</div>
+
+</div>
+
+
+
+<!-- DETAILS -->
+
+<div class="content-grid">
+
+<div class="card">
+
+<h2>
+
+Department Information
+
+</h2>
+
+
+<div class="field">
+
+<label>
+
+Department Name
+
+</label>
+
+<div>
+
+{{data.department.name}}
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+
+Department Head
+
+</label>
+
+<div>
+
+{{data.department.head}}
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+
+Company
+
+</label>
+
+<div>
+
+{{data.department.company}}
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+
+Employees
+
+</label>
+
+<div>
+
+{{data.department.employee_count}}
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+
+Team Members
+
+</h2>
+
+
+<div
+class="member"
+ng-repeat="emp in data.members">
+
+<div
+class="member-avatar">
+
+{{emp.initial}}
+
+</div>
+
+
+<div>
+
+<div
+class="member-name">
+
+{{emp.name}}
+
+</div>
+
+
+<div
+class="member-role">
+
+{{emp.designation}}
+
+</div>
+
+</div>
+
+</div>
+
+
+<div
+class="empty"
+ng-if="data.members.length===0">
+
+No employees found
+
+</div>
+
+</div>
+
+</div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>916d887383150310c07df0d6feaad36a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 09:06:31</sys_created_on>
+        <sys_id>5d6d887383150310c07df0d6feaad36e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 09:06:31</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

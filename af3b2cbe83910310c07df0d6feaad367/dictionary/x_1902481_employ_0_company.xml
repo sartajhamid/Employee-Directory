@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="d02ca83283d10310c07df0d6feaad364" label="Company" max_length="40" name="x_1902481_employ_0_company" type="collection">
+        <element label="Description" max_length="40" name="description" type="string"/>
+        <element label="Logo" max_length="40" name="logo" type="user_image"/>
+        <element label="Company Name" max_length="40" name="company_name" type="string"/>
+        <element label="Location" max_length="40" name="location" type="string"/>
+    </element>
+</database>

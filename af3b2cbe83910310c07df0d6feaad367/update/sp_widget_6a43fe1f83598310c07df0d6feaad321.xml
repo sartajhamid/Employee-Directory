@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function(){
+
+var c=this;
+
+c.search='';
+
+c.results=[];
+
+c.noResults=false;
+
+c.searchNow=function(){
+
+if(!c.search){
+
+c.results=[];
+
+c.noResults=false;
+
+return;
+
+}
+
+c.server.get({
+
+action:'search',
+
+text:c.search
+
+})
+
+.then(function(r){
+
+c.results=
+r.data.results||[];
+
+c.noResults=
+c.results.length===0;
+
+
+/* one result */
+
+if(
+
+c.results.length===1
+
+){
+
+window.location=
+
+'/ev?id=employee_profile_details&sys_id=' + c.results[0]
+
+.sys_id;
+
+}
+
+});
+
+};
+
+c.open=function(id){
+
+window.location=
+
+'/ev?id=employee_profile_details&sys_id=' + id;
+
+};
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* NAVBAR */
+
+.ev-navbar{
+
+height:82px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 48px;
+
+background:
+linear-gradient(
+90deg,
+rgba(3,12,35,.96),
+rgba(15,40,90,.95)
+);
+
+backdrop-filter:blur(22px);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.18);
+
+position:relative;
+
+z-index:100;
+
+}
+
+
+/* LOGO */
+
+.logo a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:32px;
+
+font-weight:900;
+
+letter-spacing:-0.5px;
+
+}
+
+
+/* NAV */
+
+.nav-links{
+
+display:flex;
+
+gap:34px;
+
+align-items:center;
+
+}
+
+.nav-links a{
+
+color:rgba(255,255,255,.82);
+
+text-decoration:none;
+
+font-size:15px;
+
+font-weight:700;
+
+position:relative;
+
+transition:.25s;
+
+}
+
+.nav-links a:hover{
+
+color:white;
+
+}
+
+.nav-links a:after{
+
+content:'';
+
+position:absolute;
+
+bottom:-8px;
+
+left:0;
+
+width:0;
+
+height:3px;
+
+background:#2EE6B8;
+
+border-radius:20px;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover:after{
+
+width:100%;
+
+}
+
+
+/* SEARCH */
+
+.search-area{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+min-width:260px;
+
+}
+
+.search-area input{
+
+width:280px;
+
+height:48px;
+
+padding:0 64px 0 20px;
+
+border:none;
+
+outline:none;
+
+border-radius:16px;
+
+background:
+rgba(255,255,255,.12);
+
+color:white;
+
+font-size:14px;
+
+font-weight:600;
+
+backdrop-filter:blur(20px);
+
+transition:.25s;
+
+}
+
+.search-area input::placeholder{
+
+color:
+rgba(255,255,255,.55);
+
+}
+
+.search-area input:focus{
+
+background:
+rgba(255,255,255,.18);
+
+box-shadow:
+0 0 0 3px rgba(46,230,184,.22);
+
+}
+
+.search-btn{
+
+position:absolute;
+
+right:8px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:38px;
+
+height:38px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+90deg,
+#19D29D,
+#39E0B0
+);
+
+font-size:16px;
+
+color:white;
+
+}
+
+.search-btn:hover{
+
+transform:
+translateY(-50%)
+scale(1.05);
+
+}
+
+
+/* SEARCH RESULTS */
+
+.search-results{
+
+position:absolute;
+
+top:60px;
+
+left:0;
+
+width:100%;
+
+background:#08162F;
+
+border-radius:16px;
+
+overflow:hidden;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.search-item{
+
+padding:14px;
+
+color:white;
+
+cursor:pointer;
+
+border-bottom:
+1px solid rgba(255,255,255,.08);
+
+}
+
+.search-item:hover{
+
+background:
+rgba(59,130,246,.25);
+
+}
+
+.small{
+
+margin-top:4px;
+
+font-size:12px;
+
+opacity:.65;
+
+}
+
+.no-results{
+
+position:absolute;
+
+top:60px;
+
+left:0;
+
+width:100%;
+
+padding:16px;
+
+background:#08162F;
+
+color:#A8B4D6;
+
+border-radius:16px;
+
+}
+
+
+/* MOBILE BUTTON */
+
+/* MENU BUTTON */
+
+.menu-toggle{
+
+display:none;
+
+width:42px;
+
+height:42px;
+
+position:relative;
+
+background:none;
+
+border:none;
+
+cursor:pointer;
+
+padding:0;
+
+}
+
+
+/* HAMBURGER LINES */
+
+.menu-toggle span{
+
+position:absolute;
+
+left:8px;
+
+width:26px;
+
+height:3px;
+
+background:white;
+
+border-radius:10px;
+
+transition:.3s ease;
+
+}
+
+
+/* TOP */
+
+.menu-toggle span:nth-child(1){
+
+top:12px;
+
+}
+
+
+/* MIDDLE */
+
+.menu-toggle span:nth-child(2){
+
+top:19px;
+
+}
+
+
+/* BOTTOM */
+
+.menu-toggle span:nth-child(3){
+
+top:26px;
+
+}
+
+
+/* OPEN → X */
+
+.menu-toggle.active span:nth-child(1){
+
+top:19px;
+
+transform:
+rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+top:19px;
+
+transform:
+rotate(-45deg);
+
+}
+
+
+/* SHOW BUTTON ONLY MOBILE */
+
+@media(max-width:950px){
+
+.menu-toggle{
+
+display:block;
+
+}
+
+}
+
+
+/* LARGE TABLET */
+
+@media(max-width:1200px){
+
+.ev-navbar{
+
+padding:0 32px;
+
+}
+
+.nav-links{
+
+gap:22px;
+
+}
+
+.search-area input{
+
+width:230px;
+
+}
+
+}
+
+
+/* TABLET */
+
+@media(max-width:950px){
+
+.logo a{
+
+font-size:28px;
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
+.menu-toggle{
+
+display:block;
+
+}
+
+.search-area{
+
+min-width:220px;
+
+}
+
+.search-area input{
+
+width:220px;
+
+}
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.ev-navbar{
+
+flex-wrap:wrap;
+
+height:auto;
+
+padding:18px 20px;
+
+gap:16px;
+
+align-items:center;
+
+}
+
+.logo{
+
+flex:1;
+
+}
+
+.search-area{
+
+order:3;
+
+width:100%;
+
+}
+
+.search-area input{
+
+width:100%;
+
+}
+
+.nav-links.mobile-open{
+
+display:flex;
+
+flex-direction:column;
+
+width:100%;
+
+margin-top:10px;
+
+padding:18px;
+
+background:
+rgba(5,18,45,.98);
+
+border-radius:16px;
+
+gap:18px;
+
+animation:slideDown .25s ease;
+
+}
+
+.nav-links.mobile-open a{
+
+font-size:14px;
+
+}
+
+}
+
+
+@keyframes slideDown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>dashboard_navbar</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Dashboard navbar</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+data.results=[];
+
+if(
+input &&
+input.action==='search' &&
+input.text
+){
+
+var search=
+(input.text+'')
+.toLowerCase();
+
+var gr=
+new GlideRecord(
+'x_1902481_employ_0_employee'
+);
+
+gr.query();
+
+while(gr.next()){
+
+var employee=
+gr.getDisplayValue();
+
+if(
+
+employee &&
+
+employee
+.toLowerCase()
+.indexOf(search)>=0){
+
+data.results.push({
+
+sys_id:
+gr.getUniqueValue(),
+
+name:
+employee,
+
+designation:
+gr.getDisplayValue(
+'designation'
+)
+
+});
+
+}
+
+}
+
+data.count=
+data.results.length;
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 07:54:21</sys_created_on>
+        <sys_id>6a43fe1f83598310c07df0d6feaad321</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>Dashboard navbar</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_6a43fe1f83598310c07df0d6feaad321</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 10:16:35</sys_updated_on>
+        <template><![CDATA[<div class="ev-navbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <a href="/ev">
+            Employee Vault
+        </a>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button
+    class="menu-toggle"
+    ng-click="c.menuOpen = !c.menuOpen"
+    ng-class="{'active': c.menuOpen}">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+</button>
+
+    <!-- NAV LINKS -->
+    <div
+        class="nav-links"
+        ng-class="{'mobile-open': c.menuOpen}">
+
+        <a href="/ev?id=dashboard">
+            Dashboard
+        </a>
+
+        <a href="/ev?id=department">
+            Departments
+        </a>
+
+        <a href="/ev?id=employee_directory">
+            Employees
+        </a>
+
+        <a href="/ev?id=organization_details">
+            Organization
+        </a>
+
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-area">
+
+        <input
+            type="text"
+            placeholder="Search employee..."
+            ng-model="c.search"
+            ng-keyup="$event.keyCode==13 && c.searchNow()">
+
+        <button
+            class="search-btn"
+            ng-click="c.searchNow()">
+
+            ]]>🔍
+
+<![CDATA[        </button>
+
+        <!-- RESULTS -->
+        <div
+            class="search-results"
+            ng-show="c.results.length">
+
+            <div
+                class="search-item"
+                ng-repeat="emp in c.results"
+                ng-click="c.open(emp.sys_id)">
+
+                <div>
+                    {{emp.name}}
+                </div>
+
+                <div class="small">
+                    {{emp.designation}}
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- NO RESULTS -->
+        <div
+            class="no-results"
+            ng-show="c.noResults">
+
+            No employees found
+
+        </div>
+
+    </div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>6a43fe1f83598310c07df0d6feaad321</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 07:54:21</sys_created_on>
+        <sys_id>ee43fe1f83598310c07df0d6feaad325</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 07:54:21</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

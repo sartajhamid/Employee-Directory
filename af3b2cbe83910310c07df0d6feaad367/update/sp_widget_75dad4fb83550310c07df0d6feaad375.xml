@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.org-page{
+
+padding-bottom:40px;
+
+}
+
+
+
+/* HERO */
+
+.org-hero{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#071733,
+#2757F7
+);
+
+padding:70px;
+
+border-radius:36px;
+
+display:flex;
+
+justify-content:
+space-between;
+
+color:white;
+
+}
+
+
+
+.org-overlay{
+
+position:absolute;
+
+right:-100px;
+
+top:-80px;
+
+width:420px;
+
+height:420px;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,.08);
+
+}
+
+
+
+.hero-left{
+
+max-width:760px;
+
+z-index:2;
+
+}
+
+
+
+.hero-badge{
+
+display:inline-flex;
+
+padding:14px 24px;
+
+border-radius:999px;
+
+background:
+rgba(255,255,255,.10);
+
+font-weight:600;
+
+}
+
+
+
+.org-hero h1{
+
+margin-top:24px;
+
+font-size:48px;
+
+font-weight:800;
+
+}
+
+
+
+.org-hero p{
+
+margin-top:18px;
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+
+
+/* BACK + STATS */
+
+.hero-stats{
+
+display:flex;
+
+align-items:center;
+
+gap:16px;
+
+margin-top:36px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.back-btn{
+
+height:58px;
+
+padding:0 30px;
+
+border:none;
+
+border-radius:999px;
+
+background:
+rgba(255,255,255,.12);
+
+color:white;
+
+font-size:16px;
+
+font-weight:800;
+
+cursor:pointer;
+
+}
+
+
+
+.hero-pill{
+
+height:58px;
+
+padding:0 28px;
+
+display:flex;
+
+align-items:center;
+
+border-radius:999px;
+
+background:
+rgba(255,255,255,.12);
+
+font-weight:800;
+
+}
+
+
+
+.hero-logo{
+
+width:180px;
+
+height:180px;
+
+border-radius:40px;
+
+background:
+rgba(255,255,255,.10);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:80px;
+
+z-index:2;
+
+}
+
+
+
+/* GRID */
+
+.org-grid{
+
+display:grid;
+
+grid-template-columns:
+50% 50%;
+
+gap:28px;
+
+margin-top:34px;
+
+}
+
+
+
+.card{
+
+background:white;
+
+padding:20px;
+
+border-radius:28px;
+
+}
+
+
+
+.full{
+
+grid-column:
+1/-1;
+
+}
+
+
+
+.card h2{
+
+margin-bottom:28px;
+
+color:#0B2A79;
+
+}
+
+
+
+.field{
+
+padding:22px;
+
+background:#F5F7FD;
+
+border-radius:18px;
+
+margin-bottom:18px;
+
+}
+
+
+
+.field label{
+
+display:block;
+
+font-size:12px;
+
+margin-bottom:8px;
+
+color:#666;
+
+}
+
+
+
+.field div{
+
+font-size:20px;
+
+font-weight:800;
+
+color:#0B2A79;
+
+}
+
+
+
+/* DEPARTMENTS */
+
+.dept-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+3,
+1fr
+);
+
+gap:18px;
+
+}
+
+
+
+.dept-item{
+
+background:#F5F7FD;
+
+border-radius:18px;
+
+padding:22px;
+
+min-height:110px;
+
+display:flex;
+
+justify-content:center;
+
+flex-direction:column;
+
+}
+
+
+
+.dept-name{
+
+font-size:16px;
+
+font-weight:800;
+
+color:#0B2A79;
+
+margin-bottom:10px;
+
+}
+
+
+
+.dept-count{
+
+font-size:13px;
+
+color:#6D7FA8;
+
+}
+
+
+
+/* LEADERS */
+
+.leader-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fill,
+minmax(
+260px,
+1fr
+));
+
+gap:18px;
+
+}
+
+
+
+.leader{
+
+display:flex;
+
+gap:16px;
+
+padding:18px;
+
+background:#F5F7FD;
+
+border-radius:18px;
+
+}
+
+
+
+.leader-avatar{
+
+width:60px;
+
+height:60px;
+
+border-radius:18px;
+
+background:#2F62F5;
+
+color:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+
+.leader-role{
+
+color:#7382A6;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:1200px){
+
+.dept-grid{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+}
+
+
+@media(max-width:900px){
+
+.org-grid{
+
+grid-template-columns:
+1fr;
+
+}
+
+.org-hero{
+
+flex-direction:column;
+
+gap:28px;
+
+}
+
+.hero-logo{
+
+width:130px;
+
+height:130px;
+
+font-size:64px;
+
+}
+
+.hero-stats{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.dept-grid{
+
+grid-template-columns:
+1fr;
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>organization_profile</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>organization profile</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+data.company={};
+data.departments=[];
+data.leaders=[];
+
+
+/* COMPANY */
+
+data.company={
+
+name:
+'Employee Vault',
+
+description:
+'Unified employee and organization management platform.'
+
+};
+
+
+/* COUNTS */
+
+var emp =
+new GlideAggregate(
+'x_1902481_employ_0_employee'
+);
+
+emp.addAggregate(
+'COUNT'
+);
+
+emp.query();
+
+if(emp.next()){
+
+data.company.employees=
+
+emp.getAggregate(
+'COUNT'
+);
+
+}
+
+
+
+var dep =
+new GlideAggregate(
+'x_1902481_employ_0_department'
+);
+
+dep.addAggregate(
+'COUNT'
+);
+
+dep.query();
+
+if(dep.next()){
+
+data.company.departments=
+
+dep.getAggregate(
+'COUNT'
+);
+
+}
+
+
+
+/* DEPARTMENTS */
+
+var d =
+new GlideRecord(
+'x_1902481_employ_0_department'
+);
+
+d.query();
+
+while(d.next()){
+
+var ga =
+new GlideAggregate(
+'x_1902481_employ_0_employee'
+);
+
+ga.addQuery(
+'department',
+d.getUniqueValue()
+);
+
+ga.addAggregate(
+'COUNT'
+);
+
+ga.query();
+
+var count=0;
+
+if(ga.next()){
+
+count=
+ga.getAggregate(
+'COUNT'
+);
+
+}
+
+data.departments.push({
+
+name:
+d.department_name+'',
+
+count:
+count
+
+});
+
+}
+
+
+
+/* LEADERS */
+
+var leaders=
+new GlideRecord(
+'x_1902481_employ_0_employee'
+);
+
+leaders.addQuery(
+'designation',
+'CONTAINS',
+'Manager'
+);
+
+leaders.query();
+
+while(leaders.next()){
+
+data.leaders.push({
+
+name:
+
+leaders.first_name+
+' '+
+leaders.last_name,
+
+role:
+
+leaders.designation+
+'',
+
+initial:
+
+(
+leaders.first_name+
+''
+).substring(
+0,
+1
+)
+
+});
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 10:05:16</sys_created_on>
+        <sys_id>75dad4fb83550310c07df0d6feaad375</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>organization profile</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_75dad4fb83550310c07df0d6feaad375</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 10:52:55</sys_updated_on>
+        <template><![CDATA[<div class="org-page">
+
+<!-- HERO -->
+
+<div class="org-hero">
+
+<div class="org-overlay"></div>
+
+<div class="hero-left">
+
+<div class="hero-badge">
+ORGANIZATION
+</div>
+
+<h1>
+{{data.company.name}}
+</h1>
+
+<p>
+{{data.company.description}}
+</p>
+
+
+<!-- ACTIONS ROW -->
+
+<div class="hero-stats">
+
+<button
+class="back-btn"
+onclick="history.back()">
+
+← Back
+
+</button>
+
+<div class="hero-pill">
+
+{{data.company.departments}}
+Departments
+
+</div>
+
+<div class="hero-pill">
+
+{{data.company.employees}}
+Employees
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hero-logo">
+
+]]>🏢
+
+<![CDATA[</div>
+
+</div>
+
+
+
+<!-- CONTENT -->
+
+<div class="org-grid">
+
+
+<!-- LEFT -->
+
+<div class="card">
+
+<h2>
+Organization Details
+</h2>
+
+
+<div class="field">
+
+<label>
+Company Name
+</label>
+
+<div>
+{{data.company.name}}
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Organization Head
+</label>
+
+<div>
+{{data.company.head}}
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Location
+</label>
+
+<div>
+{{data.company.location}}
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Departments
+</label>
+
+<div>
+{{data.company.departments}}
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Employees
+</label>
+
+<div>
+{{data.company.employees}}
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RIGHT -->
+
+<div class="card">
+
+<h2>
+Departments
+</h2>
+
+<div class="dept-grid">
+
+<div
+class="dept-item"
+ng-repeat="dept in data.departments">
+
+<div class="dept-name">
+
+{{dept.name}}
+
+</div>
+
+<div class="dept-count">
+
+{{dept.count}}
+Employees
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- LEADERS -->
+
+<div class="card full">
+
+<h2>
+Leadership Team
+</h2>
+
+<div class="leader-grid">
+
+<div
+class="leader"
+ng-repeat="m in data.leaders">
+
+<div
+class="leader-avatar">
+
+{{m.initial}}
+
+</div>
+
+<div>
+
+<div class="leader-name">
+
+{{m.name}}
+
+</div>
+
+<div class="leader-role">
+
+{{m.role}}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>75dad4fb83550310c07df0d6feaad375</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 10:05:16</sys_created_on>
+        <sys_id>f9dad4fb83550310c07df0d6feaad379</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 10:05:16</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

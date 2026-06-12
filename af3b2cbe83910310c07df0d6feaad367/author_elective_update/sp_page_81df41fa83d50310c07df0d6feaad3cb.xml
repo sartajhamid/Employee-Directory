@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="DELETE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>employee_dashboard</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles/>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 11:22:51</sys_created_on>
+        <sys_id>81df41fa83d50310c07df0d6feaad3cb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>employee_dashboard</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_page_81df41fa83d50310c07df0d6feaad3cb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-09 11:22:51</sys_updated_on>
+        <title>Employee Dashboard</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="DELETE" query="documentkey=81df41fa83d50310c07df0d6feaad3cb"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</application>
+        <file_path/>
+        <instance_id>5a136ac0ebbfcad4cbdefceacad0cd90</instance_id>
+        <instance_name>dev282697</instance_name>
+        <name>sp_page_81df41fa83d50310c07df0d6feaad3cb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>custom</category><css/><draft>false</draft><dynamic_title_structure/><human_readable_url_structure/><id>employee_dashboard</id><internal>false</internal><omit_watcher>false</omit_watcher><public>false</public><roles/><seo_script/><short_description/><sys_class_name>sp_page</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-06-09 11:22:51</sys_created_on><sys_id>81df41fa83d50310c07df0d6feaad3cb</sys_id><sys_mod_count>0</sys_mod_count><sys_name>employee_dashboard</sys_name><sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package><sys_policy/><sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope><sys_update_name>sp_page_81df41fa83d50310c07df0d6feaad3cb</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-06-09 11:22:51</sys_updated_on><title>Employee Dashboard</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=81df41fa83d50310c07df0d6feaad3cb"/></record_update>]]></payload>
+        <payload_hash>938067948</payload_hash>
+        <record_name>employee_dashboard</record_name>
+        <reverted_from/>
+        <source>bb3b2cbe83910310c07df0d6feaad3bb</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 11:22:51</sys_created_on>
+        <sys_id>cddf41fa83d50310c07df0d6feaad3d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19eac1ef8650000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-09 11:22:51</sys_updated_on>
+        <type>Page</type>
+        <update_guid>8ddf41fa92d5031079f53f1b204d98cf</update_guid>
+        <update_guid_history>8ddf41fa92d5031079f53f1b204d98cf:938067948</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="employee_dashboard">1eddda7283514310c07df0d6feaad304</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 17:03:44</sys_created_on>
+        <sys_db_object display_value="" name="sp_page">sp_page</sys_db_object>
+        <sys_id>25956a87d2094acf89d42916b6685749</sys_id>
+        <sys_metadata>81df41fa83d50310c07df0d6feaad3cb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>employee_dashboard</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_scope_delete display_value="">2bfc7689130e47efa9643babe13d2c01</sys_scope_delete>
+        <sys_update_name>sp_page_81df41fa83d50310c07df0d6feaad3cb</sys_update_name>
+        <sys_update_version display_value="sp_page_81df41fa83d50310c07df0d6feaad3cb">cddf41fa83d50310c07df0d6feaad3d0</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-09 17:03:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

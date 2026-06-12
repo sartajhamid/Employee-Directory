@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.recent-card{
+
+background:white;
+
+border-radius:28px;
+
+padding:28px;
+
+}
+
+
+
+/* HEADER */
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:24px;
+
+}
+
+
+
+.header h2{
+
+margin:0;
+
+font-size:30px;
+
+font-weight:900;
+
+color:#07195A;
+
+}
+
+
+
+/* BADGE */
+
+.badge{
+
+width:44px;
+
+height:44px;
+
+border-radius:16px;
+
+background:#EEF4FF;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:900;
+
+font-size:15px;
+
+color:#2F62F5;
+
+}
+
+
+
+/* ROW */
+
+.employee-row{
+
+display:flex;
+
+align-items:center;
+
+padding:16px;
+
+border-radius:18px;
+
+background:#F7F9FD;
+
+margin-bottom:14px;
+
+gap:14px;
+
+}
+
+
+
+.employee-row:last-child{
+
+margin-bottom:0;
+
+}
+
+
+
+/* AVATAR */
+
+.avatar{
+
+width:52px;
+
+height:52px;
+
+min-width:52px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#2F62F5,
+#4C84FF
+);
+
+color:white;
+
+font-size:20px;
+
+font-weight:900;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+
+/* INFO */
+
+.employee-info{
+
+flex:1;
+
+min-width:0;
+
+}
+
+
+
+.emp-name{
+
+font-size:16px;
+
+font-weight:800;
+
+color:#07195A;
+
+word-break:break-word;
+
+}
+
+
+
+.emp-role{
+
+color:#65749A;
+
+margin-top:3px;
+
+font-size:13px;
+
+}
+
+
+
+.join-date{
+
+margin-top:6px;
+
+color:#98A5C5;
+
+font-size:11px;
+
+}
+
+
+
+/* BUTTON */
+
+.view-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:130px;
+
+height:46px;
+
+padding:0 18px;
+
+background:#2F62F5;
+
+border-radius:14px;
+
+color:white !important;
+
+font-size:13px;
+
+font-weight:800;
+
+text-decoration:none !important;
+
+cursor:pointer;
+
+transition:.25s;
+
+white-space:nowrap;
+
+}
+
+
+
+.view-btn:hover{
+
+transform:
+translateY(-2px);
+
+background:#1E4FE0;
+
+box-shadow:
+0 14px 28px rgba(47,98,245,.25);
+
+}
+
+
+
+/* TABLET */
+
+@media(max-width:900px){
+
+.recent-card{
+
+padding:22px;
+
+}
+
+.header h2{
+
+font-size:24px;
+
+}
+
+.employee-row{
+
+padding:14px;
+
+}
+
+.view-btn{
+
+min-width:120px;
+
+}
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.header{
+
+align-items:flex-start;
+
+}
+
+.employee-row{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.employee-info{
+
+width:100%;
+
+margin-top:8px;
+
+}
+
+.view-btn{
+
+width:100%;
+
+margin-top:10px;
+
+}
+
+}
+
+
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+.recent-card{
+
+padding:18px;
+
+}
+
+.header h2{
+
+font-size:20px;
+
+}
+
+.badge{
+
+width:40px;
+
+height:40px;
+
+font-size:14px;
+
+}
+
+.avatar{
+
+width:46px;
+
+height:46px;
+
+font-size:18px;
+
+}
+
+.emp-name{
+
+font-size:14px;
+
+}
+
+.emp-role{
+
+font-size:12px;
+
+}
+
+.join-date{
+
+font-size:10px;
+
+}
+
+.view-btn{
+
+height:42px;
+
+font-size:12px;
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>dashboard_recent_emp</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>dashboard recent emp</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+data.employees=[];
+data.total=0;
+
+var gr=
+new GlideRecord(
+'x_1902481_employ_0_employee'
+);
+
+gr.orderByDesc(
+'join_date'
+);
+
+gr.setLimit(5);
+
+gr.query();
+
+while(gr.next()){
+
+var empName=
+gr.getDisplayValue()||
+'Employee';
+
+var joinDate=
+gr.join_date?
+gr.join_date.getDisplayValue():'Not available';
+
+var designation=
+gr.designation?gr.designation.getDisplayValue():'-';
+
+data.total++;
+
+data.employees.push({
+
+sys_id:
+gr.getUniqueValue(),
+
+name:
+empName,
+
+designation:
+designation,
+
+join_date:
+joinDate,
+
+initial:
+empName.charAt(0)
+
+});
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 19:00:45</sys_created_on>
+        <sys_id>ccdb016b831dc310c07df0d6feaad3a5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>dashboard recent emp</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_ccdb016b831dc310c07df0d6feaad3a5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 19:02:04</sys_updated_on>
+        <template><![CDATA[<div class="recent-card">
+
+<div class="header">
+
+<h2>
+Recent Joinees
+</h2>
+
+<div class="badge">
+{{data.total}}
+</div>
+
+</div>
+
+<div class="employee-list">
+
+<div
+class="employee-row"
+ng-repeat="emp in data.employees">
+
+<div class="avatar">
+
+{{emp.initial}}
+
+</div>
+
+<div class="employee-info">
+
+<div class="emp-name">
+{{emp.name}}
+</div>
+
+<div class="emp-role">
+{{emp.designation}}
+</div>
+
+<div class="join-date">
+Joined {{emp.join_date}}
+</div>
+
+</div>
+
+<a
+class="view-btn"
+ng-href="?id=employee_profile_details&sys_id={{emp.sys_id}}">
+]]>👁<![CDATA[ View Profile
+</a>
+
+</div>
+
+</div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>ccdb016b831dc310c07df0d6feaad3a5</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 19:00:45</sys_created_on>
+        <sys_id>8cdb856b831dc310c07df0d6feaad3d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 19:00:45</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

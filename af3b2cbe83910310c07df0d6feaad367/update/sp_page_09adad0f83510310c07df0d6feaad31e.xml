@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css>body,
+.sp-page-root,
+.container,
+.container-fluid{
+
+background:
+linear-gradient(
+180deg,
+#F3F6FB 0%,
+#EDF2F8 100%
+);
+
+padding-top:0 !important;
+
+}
+
+
+
+/* ROW CONTROL */
+
+.sp-row{
+
+margin:0 !important;
+
+padding:0 !important;
+
+}
+
+
+
+/* COLUMN CONTROL */
+
+.sp-column{
+
+padding-top:0 !important;
+
+padding-bottom:0 !important;
+
+margin-top:0 !important;
+
+margin-bottom:10px !important;
+
+}
+
+
+
+/* DEFAULT WIDGET SPACING */
+
+.sp-widget{
+
+margin-bottom:10px !important;
+
+}
+
+
+
+/* BOOTSTRAP ROW */
+
+.row{
+
+margin-top:0 !important;
+
+margin-bottom:0 !important;
+
+}
+
+
+
+/* HERO → STATS */
+
+.hero{
+
+margin-bottom:10px !important;
+
+}
+
+.hero-wrapper{
+
+margin-bottom:10px !important;
+
+}
+
+
+
+/* STATS → RECENT JOINEES */
+
+.metrics-grid{
+
+margin-bottom:10px !important;
+
+}
+
+
+
+/* RECENT CARD */
+
+.recent-card{
+
+margin-top:10px !important;
+
+}
+
+
+
+/* FOOTER */
+
+.footer-wrap{
+
+margin-top:0 !important;
+
+}</css>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>dashboard</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles/>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 08:11:34</sys_created_on>
+        <sys_id>09adad0f83510310c07df0d6feaad31e</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>dashboard</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_page_09adad0f83510310c07df0d6feaad31e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 19:08:48</sys_updated_on>
+        <title>Dashboard</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=09adad0f83510310c07df0d6feaad31e"/>
+</record_update>

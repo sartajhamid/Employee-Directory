@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($window){
+
+var c=this;
+
+c.open=function(route){
+
+$window.location.href=route;
+
+};
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.metrics-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:22px;
+
+}
+
+
+.metric-card{
+
+background:#FFFFFF;
+
+height:190px;
+
+border-radius:28px;
+
+padding:26px;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+0 14px 40px rgba(0,0,0,.06);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+
+.metric-card:hover{
+
+transform:
+translateY(-5px);
+
+}
+
+
+.top{
+
+display:flex;
+
+align-items:center;
+
+gap:24px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+.metric-icon{
+
+width:78px;
+
+height:78px;
+
+min-width:78px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
+}
+
+
+
+.metric-value{
+
+font-size:62px;
+
+font-weight:900;
+
+color:#07195A;
+
+line-height:1;
+
+}
+
+
+
+.metric-title{
+
+font-size:22px;
+
+font-weight:800;
+
+color:#6D7CA7;
+
+}
+
+
+
+.metric-sub{
+
+margin-left:102px;
+
+margin-top:6px;
+
+font-size:14px;
+
+color:#9AA5C2;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+.bg-circle{
+
+position:absolute;
+
+right:-55px;
+
+bottom:-55px;
+
+width:170px;
+
+height:170px;
+
+border-radius:50%;
+
+opacity:.08;
+
+}
+
+
+
+/* THEMES */
+
+.employees{
+
+border-left:5px solid #2F62F5;
+
+}
+
+.employees .metric-icon{
+
+background:#2F62F5;
+
+color:white;
+
+}
+
+.employees .bg-circle{
+
+background:#2F62F5;
+
+}
+
+
+
+.department{
+
+border-left:5px solid #08B77B;
+
+}
+
+.department .metric-icon{
+
+background:#DCF8EA;
+
+}
+
+.department .bg-circle{
+
+background:#00B87A;
+
+}
+
+
+
+.active{
+
+border-left:5px solid #FDB022;
+
+}
+
+.active .metric-icon{
+
+background:#FFF2D8;
+
+}
+
+.active .bg-circle{
+
+background:#FFB020;
+
+}
+
+
+
+.inactive{
+
+border-left:5px solid #A259FF;
+
+}
+
+.inactive .metric-icon{
+
+background:#F2E8FF;
+
+}
+
+.inactive .bg-circle{
+
+background:#A259FF;
+
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+.metrics-grid{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+}
+
+
+@media(max-width:700px){
+
+.metrics-grid{
+
+grid-template-columns:
+1fr;
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>single_stats_card</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>single stats card</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+data.cards=[];
+
+var EMP=
+'x_1902481_employ_0_employee';
+
+var DEPT=
+'x_1902481_employ_0_department';
+
+
+
+function count(table,field,value){
+
+var ga=
+new GlideAggregate(table);
+
+if(field)
+ga.addQuery(field,value);
+
+ga.addAggregate('COUNT');
+
+ga.query();
+
+if(ga.next())
+return parseInt(
+ga.getAggregate('COUNT'),
+10
+);
+
+return 0;
+
+}
+
+
+
+data.cards=[
+
+{
+
+title:'Employees',
+
+sub:'All employees',
+
+value:
+count(EMP),
+
+icon:']]>👥<![CDATA[',
+
+class:'employees',
+
+route:
+'/ev?id=employee_directory'
+
+},
+
+{
+
+title:'Departments',
+
+sub:'Across organization',
+
+value:
+count(DEPT),
+
+icon:']]>🏢<![CDATA[',
+
+class:'department',
+
+route:
+'/ev?id=department'
+
+},
+
+{
+
+title:'Active Employees',
+
+sub:'Currently working',
+
+value:
+count(
+EMP,
+'status',
+'active'
+),
+
+icon:']]>🟢<![CDATA[',
+
+class:'active',
+
+route:
+'/ev?id=employee_directory&status=active'
+
+},
+
+{
+
+title:'Inactive Employees',
+
+sub:'Need attention',
+
+value:
+count(
+EMP,
+'status',
+'inactive'
+),
+
+icon:']]>🔴<![CDATA[',
+
+class:'inactive',
+
+route:
+'/ev?id=employee_directory&status=inactive'
+
+}
+
+];
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 18:49:25</sys_created_on>
+        <sys_id>ca39c56f83d9c310c07df0d6feaad3b4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>single stats card</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_ca39c56f83d9c310c07df0d6feaad3b4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 18:51:38</sys_updated_on>
+        <template><![CDATA[<div class="metrics-grid">
+
+<div
+class="metric-card {{card.class}}"
+ng-repeat="card in data.cards"
+ng-click="c.open(card.route)">
+
+<div class="top">
+
+<div class="metric-icon">
+{{card.icon}}
+</div>
+
+<div class="metric-value">
+{{card.value}}
+</div>
+
+</div>
+
+<div class="metric-title">
+{{card.title}}
+</div>
+
+<div class="metric-sub">
+{{card.sub}}
+</div>
+
+<div class="bg-circle"></div>
+
+</div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>ca39c56f83d9c310c07df0d6feaad3b4</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 18:49:25</sys_created_on>
+        <sys_id>9639c56f83d9c310c07df0d6feaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 18:49:25</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function(){
+
+var c=this;
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.hero-wrapper{
+
+position:relative;
+
+overflow:hidden;
+
+min-height:560px;
+
+margin-top:-18px;
+
+padding:90px 64px 64px;
+
+border-radius:0 0 36px 36px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:60px;
+
+background:
+linear-gradient(
+135deg,
+#04112C,
+#173C97,
+#4E7BFF
+);
+
+box-shadow:
+0 30px 70px
+rgba(0,0,0,.15);
+
+}
+
+
+
+/* LEFT */
+
+.hero-left{
+
+max-width:620px;
+
+z-index:2;
+
+}
+
+
+.hero-badge{
+
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:
+rgba(255,255,255,.12);
+
+backdrop-filter:
+blur(20px);
+
+font-size:8px;
+
+font-weight:600;
+
+letter-spacing:1.4px;
+
+color:white;
+
+}
+
+
+
+.hero-left h1{
+
+margin-top:28px;
+
+margin-bottom:20px;
+
+font-size:54px;
+
+line-height:1.02;
+
+font-weight:900;
+
+color:white;
+
+}
+
+
+
+.hero-left p{
+
+font-size:19px;
+
+line-height:1.6;
+
+color:
+rgba(
+255,
+255,
+255,
+.90
+);
+
+max-width:560px;
+
+}
+
+
+
+/* ACTION */
+
+.hero-actions{
+
+margin-top:34px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:14px;
+
+}
+
+
+
+.directory-btn{
+
+min-height:56px;
+
+padding:0 34px;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:
+linear-gradient(
+90deg,
+#19D89A,
+#31D6B6
+);
+
+border-radius:16px;
+
+font-size:16px;
+
+font-weight:800;
+
+color:white;
+
+text-decoration:none;
+
+box-shadow:
+0 14px 34px
+rgba(27,211,152,.30);
+
+transition:.25s;
+
+}
+
+
+.directory-btn:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+
+
+/* RIGHT */
+
+.hero-right{
+
+display:flex;
+
+flex-direction:column;
+
+gap:22px;
+
+z-index:2;
+
+}
+
+
+
+.stat-card{
+
+width:220px;
+
+min-height:140px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+border-radius:26px;
+
+background:
+rgba(
+255,
+255,
+255,
+.12
+);
+
+backdrop-filter:
+blur(26px);
+
+padding:20px;
+
+}
+
+
+
+.stat-value{
+
+font-size:48px;
+
+font-weight:900;
+
+color:white;
+
+}
+
+
+
+.stat-label{
+
+margin-top:8px;
+
+font-size:16px;
+
+color:white;
+
+}
+
+
+
+/* BLURS */
+
+.blur{
+
+position:absolute;
+
+border-radius:50%;
+
+background:
+rgba(
+255,
+255,
+255,
+.08
+);
+
+pointer-events:none;
+
+}
+
+
+.blur1{
+
+width:520px;
+
+height:520px;
+
+right:-160px;
+
+top:-160px;
+
+}
+
+
+.blur2{
+
+width:400px;
+
+height:400px;
+
+left:-180px;
+
+bottom:-180px;
+
+}
+
+
+
+/* LAPTOP */
+
+@media(max-width:1200px){
+
+.hero-wrapper{
+
+padding:80px 44px 54px;
+
+gap:40px;
+
+}
+
+.hero-left h1{
+
+font-size:48px;
+
+}
+
+.hero-left p{
+
+font-size:17px;
+
+}
+
+.stat-card{
+
+width:200px;
+
+}
+
+}
+
+
+
+/* TABLET */
+
+@media(max-width:900px){
+
+.hero-wrapper{
+
+flex-direction:column;
+
+text-align:center;
+
+padding:70px 34px 50px;
+
+min-height:auto;
+
+}
+
+.hero-left{
+
+max-width:100%;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+.hero-left p{
+
+font-size:16px;
+
+margin:auto;
+
+}
+
+.hero-actions{
+
+justify-content:center;
+
+}
+
+.hero-right{
+
+width:100%;
+
+flex-direction:row;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:18px;
+
+}
+
+.stat-card{
+
+width:220px;
+
+}
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.hero-wrapper{
+
+padding:60px 20px 40px;
+
+gap:36px;
+
+}
+
+.hero-left h1{
+
+font-size:34px;
+
+line-height:1.05;
+
+}
+
+.hero-left p{
+
+font-size:14px;
+
+line-height:1.7;
+
+}
+
+.directory-btn{
+
+width:100%;
+
+font-size:14px;
+
+min-height:52px;
+
+}
+
+.hero-right{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.stat-card{
+
+width:100%;
+
+max-width:280px;
+
+min-height:120px;
+
+}
+
+.stat-value{
+
+font-size:40px;
+
+}
+
+.stat-label{
+
+font-size:14px;
+
+}
+
+.blur1{
+
+width:320px;
+
+height:320px;
+
+}
+
+.blur2{
+
+width:260px;
+
+height:260px;
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>hero_container</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>hero container</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+data.employees=0;
+data.departments=0;
+
+
+/* employees */
+
+var emp=
+new GlideAggregate(
+'x_1902481_employ_0_employee'
+);
+
+emp.addAggregate(
+'COUNT'
+);
+
+emp.query();
+
+if(emp.next()){
+
+data.employees=
+emp.getAggregate(
+'COUNT'
+);
+
+}
+
+
+/* departments */
+
+var dep=
+new GlideAggregate(
+'x_1902481_employ_0_department'
+);
+
+dep.addAggregate(
+'COUNT'
+);
+
+dep.query();
+
+if(dep.next()){
+
+data.departments=
+dep.getAggregate(
+'COUNT'
+);
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 08:25:40</sys_created_on>
+        <sys_id>997afe9b83998310c07df0d6feaad393</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>hero container</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_997afe9b83998310c07df0d6feaad393</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 18:12:54</sys_updated_on>
+        <template><![CDATA[<div class="hero-wrapper">
+
+<div class="hero-left">
+
+<div class="hero-badge">
+EMPLOYEE VAULT
+</div>
+
+<h1>
+Build.<br>
+Manage.<br>
+Track Employees.
+</h1>
+
+<p>
+Manage employees, departments and organization
+structure from one unified workspace.
+</p>
+
+<div class="hero-actions">
+
+<a
+class="directory-btn"
+href="/ev?id=employee_directory">
+Employee Directory
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-right">
+
+<div class="stat-card">
+
+<div class="stat-value">
+{{data.employees}}
+</div>
+
+<div class="stat-label">
+Employees
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-value">
+{{data.departments}}
+</div>
+
+<div class="stat-label">
+Departments
+</div>
+
+</div>
+
+</div>
+
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>997afe9b83998310c07df0d6feaad393</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 08:25:41</sys_created_on>
+        <sys_id>117afe9b83998310c07df0d6feaad398</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 08:25:41</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

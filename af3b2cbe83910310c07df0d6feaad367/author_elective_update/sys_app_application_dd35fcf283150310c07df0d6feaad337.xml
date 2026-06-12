@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="DELETE">
+        <active>true</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description>Company records</description>
+        <device_type>browser</device_type>
+        <hint/>
+        <name/>
+        <order>100</order>
+        <roles/>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 09:28:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>dd35fcf283150310c07df0d6feaad337</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Companies</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sys_app_application_dd35fcf283150310c07df0d6feaad337</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-09 09:28:38</sys_updated_on>
+        <title>Companies</title>
+        <view_name/>
+    </sys_app_application>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</application>
+        <file_path/>
+        <instance_id>5a136ac0ebbfcad4cbdefceacad0cd90</instance_id>
+        <instance_name>dev282697</instance_name>
+        <name>sys_app_application_dd35fcf283150310c07df0d6feaad337</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>true</active><category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category><description>Company records</description><device_type>browser</device_type><hint/><name/><order>100</order><roles/><sys_class_name>sys_app_application</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-06-09 09:28:38</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>dd35fcf283150310c07df0d6feaad337</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Companies</sys_name><sys_overrides/><sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package><sys_policy/><sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope><sys_update_name>sys_app_application_dd35fcf283150310c07df0d6feaad337</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-06-09 09:28:38</sys_updated_on><title>Companies</title><view_name/></sys_app_application></record_update>]]></payload>
+        <payload_hash>-1762274095</payload_hash>
+        <record_name>Companies</record_name>
+        <reverted_from/>
+        <source>bb3b2cbe83910310c07df0d6feaad3bb</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 09:28:38</sys_created_on>
+        <sys_id>ccb57c3683150310c07df0d6feaad3cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19eabb6672b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-09 09:28:38</sys_updated_on>
+        <type>Application Menu</type>
+        <update_guid>8cb57c369b1503101008c06758fb5bcc</update_guid>
+        <update_guid_history>8cb57c369b1503101008c06758fb5bcc:-1762274095</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Companies">1ff5f47683150310c07df0d6feaad37d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 09:29:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_application">sys_app_application</sys_db_object>
+        <sys_id>03fd28c402b34b0f8b7ca239a21524f1</sys_id>
+        <sys_metadata>dd35fcf283150310c07df0d6feaad337</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Companies</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_scope_delete display_value="">2bfc7689130e47efa9643babe13d2c01</sys_scope_delete>
+        <sys_update_name>sys_app_application_dd35fcf283150310c07df0d6feaad337</sys_update_name>
+        <sys_update_version display_value="sys_app_application_dd35fcf283150310c07df0d6feaad337">ccb57c3683150310c07df0d6feaad3cd</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-09 09:29:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

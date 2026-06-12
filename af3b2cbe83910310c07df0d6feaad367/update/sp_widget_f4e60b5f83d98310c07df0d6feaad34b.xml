@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.directory-hero{
+
+background:
+linear-gradient(
+135deg,
+#071733,
+#1D46D5
+);
+
+min-height:340px;
+
+padding:56px;
+
+border-radius:
+0 0 36px 36px;
+
+display:flex;
+
+justify-content:
+space-between;
+
+align-items:center;
+
+gap:40px;
+
+color:white;
+
+overflow:hidden;
+
+}
+
+
+
+/* LEFT */
+
+.hero-left{
+
+max-width:620px;
+
+}
+
+
+
+/* BADGE */
+
+.hero-badge{
+
+display:inline-block;
+
+padding:
+10px 18px;
+
+border-radius:
+999px;
+
+background:
+rgba(
+255,
+255,
+255,
+.12
+);
+
+font-weight:
+700;
+
+letter-spacing:
+1.5px;
+
+font-size:
+10px;
+
+}
+
+
+
+/* TITLE */
+
+.hero-left h1{
+
+font-size:
+56px;
+
+margin:
+22px 0;
+
+font-weight:
+900;
+
+line-height:
+1.05;
+
+}
+
+
+
+/* DESCRIPTION */
+
+.hero-left p{
+
+font-size:
+18px;
+
+line-height:
+1.7;
+
+opacity:
+.90;
+
+max-width:
+520px;
+
+}
+
+
+
+/* ACTIONS */
+
+.hero-actions{
+
+display:flex;
+
+gap:14px;
+
+flex-wrap:wrap;
+
+margin-top:26px;
+
+}
+
+
+
+/* BACK */
+
+.back-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:
+0 28px;
+
+height:50px;
+
+border-radius:
+16px;
+
+background:
+rgba(
+255,
+255,
+255,
+.12
+);
+
+color:white;
+
+font-size:
+13px;
+
+font-weight:
+800;
+
+text-decoration:none;
+
+backdrop-filter:
+blur(20px);
+
+transition:.25s;
+
+}
+
+
+.back-btn:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+
+
+/* MAIN BUTTON */
+
+.hero-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+height:50px;
+
+padding:
+0 28px;
+
+border-radius:
+16px;
+
+background:
+linear-gradient(
+90deg,
+#17D698,
+#35D6AE
+);
+
+color:
+white;
+
+font-size:
+13px;
+
+font-weight:
+800;
+
+text-decoration:
+none;
+
+transition:.25s;
+
+}
+
+
+.hero-btn:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+
+
+/* RIGHT CARD */
+
+.hero-card{
+
+width:
+190px;
+
+height:
+190px;
+
+border-radius:
+28px;
+
+background:
+rgba(
+255,
+255,
+255,
+.12
+);
+
+backdrop-filter:
+blur(
+20px
+);
+
+display:flex;
+
+flex-direction:
+column;
+
+justify-content:
+center;
+
+align-items:
+center;
+
+}
+
+
+
+.hero-number{
+
+font-size:
+54px;
+
+font-weight:
+900;
+
+}
+
+
+
+.hero-label{
+
+font-size:
+15px;
+
+margin-top:
+6px;
+
+}
+
+
+
+/* TABLET */
+
+@media(max-width:900px){
+
+.directory-hero{
+
+padding:44px 34px;
+
+flex-direction:column;
+
+text-align:center;
+
+min-height:auto;
+
+}
+
+.hero-left{
+
+max-width:100%;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+.hero-left p{
+
+font-size:15px;
+
+margin:auto;
+
+}
+
+.hero-actions{
+
+justify-content:center;
+
+}
+
+.hero-card{
+
+width:180px;
+
+height:180px;
+
+}
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.directory-hero{
+
+padding:34px 20px;
+
+gap:30px;
+
+}
+
+.hero-left h1{
+
+font-size:34px;
+
+}
+
+.hero-left p{
+
+font-size:13px;
+
+}
+
+.hero-card{
+
+width:150px;
+
+height:150px;
+
+}
+
+.hero-number{
+
+font-size:42px;
+
+}
+
+.hero-label{
+
+font-size:13px;
+
+}
+
+.back-btn,
+.hero-btn{
+
+width:100%;
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>directory_hero</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>directory hero</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+data.total=0;
+
+var gr=
+new GlideAggregate(
+'x_1902481_employ_0_employee'
+);
+
+gr.addAggregate(
+'COUNT'
+);
+
+gr.query();
+
+if(
+gr.next()
+){
+
+data.total=
+gr.getAggregate(
+'COUNT'
+);
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 09:19:59</sys_created_on>
+        <sys_id>f4e60b5f83d98310c07df0d6feaad34b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>directory hero</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_f4e60b5f83d98310c07df0d6feaad34b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 19:14:53</sys_updated_on>
+        <template><![CDATA[<div class="directory-hero">
+
+<div class="hero-left">
+
+<div class="hero-badge">
+EMPLOYEE DIRECTORY
+</div>
+
+<h1>
+Find Your Team
+</h1>
+
+<p>
+Explore employees, discover departments
+and navigate organization details.
+</p>
+
+<div class="hero-actions">
+
+<a
+class="back-btn"
+href="javascript:history.back()">
+
+← Back
+
+</a>
+
+<a
+class="hero-btn"
+href="#employees">
+
+Browse Employees
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-right">
+
+<div class="hero-card">
+
+<div class="hero-number">
+{{data.total}}
+</div>
+
+<div class="hero-label">
+Employees
+</div>
+
+</div>
+
+</div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f4e60b5f83d98310c07df0d6feaad34b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 09:19:59</sys_created_on>
+        <sys_id>38e68f17831d8310c07df0d6feaad352</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 09:19:59</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

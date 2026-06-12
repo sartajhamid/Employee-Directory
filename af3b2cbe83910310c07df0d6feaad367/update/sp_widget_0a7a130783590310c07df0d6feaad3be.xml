@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.employee-hero{
+
+position:relative;
+
+overflow:hidden;
+
+min-height:320px;
+
+border-radius:32px;
+
+background:
+linear-gradient(
+135deg,
+#041B48,
+#1B4DB4,
+#4D7EFF
+);
+
+padding:60px;
+
+display:flex;
+
+align-items:center;
+
+box-shadow:
+0 24px 80px rgba(0,0,0,.18);
+
+}
+
+
+.hero-overlay{
+
+position:absolute;
+
+right:-100px;
+
+top:-100px;
+
+width:450px;
+
+height:450px;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,.06);
+
+}
+
+
+.hero-content{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+gap:40px;
+
+z-index:2;
+
+}
+
+
+.avatar{
+
+width:150px;
+
+height:150px;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,.18);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:64px;
+
+font-weight:800;
+
+color:white;
+
+backdrop-filter:blur(10px);
+
+}
+
+
+/* REMOVE GLOBAL WHITE */
+
+.hero-details{
+
+}
+
+
+/* KEEP NAME + DESIGNATION WHITE */
+
+.employee-name{
+
+font-size:64px;
+
+font-weight:800;
+
+line-height:1;
+
+margin-bottom:18px;
+
+color:white;
+
+}
+
+
+.designation{
+
+font-size:28px;
+
+opacity:.95;
+
+margin-bottom:24px;
+
+color:white;
+
+}
+
+
+
+/* STATUS */
+
+.status{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:14px 24px;
+
+border-radius:999px;
+
+font-size:18px;
+
+font-weight:700;
+
+}
+
+
+
+/* ACTIVE */
+
+.status.active{
+
+background:
+rgba(43,209,109,.18);
+
+color:
+#4DFF8A;
+
+}
+
+
+.status.active .dot{
+
+background:
+#4DFF8A;
+
+}
+
+
+
+/* INACTIVE */
+
+.status.inactive{
+
+background:
+rgba(255,94,94,.18);
+
+color:
+#FF6B6B;
+
+}
+
+
+.status.inactive .dot{
+
+background:
+#FF5E5E;
+
+}
+
+
+
+/* ON LEAVE */
+
+.status.leave{
+
+background:
+rgba(255,180,0,.18);
+
+color:
+#FFC247;
+
+}
+
+
+.status.leave .dot{
+
+background:
+#FFC247;
+
+}
+
+
+
+/* FORCE STATUS TEXT COLOR */
+
+.status,
+.status *{
+
+color:
+inherit !important;
+
+}
+
+
+
+/* DOT */
+
+.dot{
+
+width:12px;
+
+height:12px;
+
+border-radius:50%;
+
+flex-shrink:0;
+
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.employee-hero{
+
+padding:40px;
+
+}
+
+.hero-content{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.employee-name{
+
+font-size:44px;
+
+}
+
+.designation{
+
+font-size:22px;
+
+}
+
+.avatar{
+
+width:120px;
+
+height:120px;
+
+font-size:52px;
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>employee_profile_hero</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>employee profile hero</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+var sysId =
+$sp.getParameter(
+'sys_id'
+);
+
+if(!sysId)
+return;
+
+var gr =
+new GlideRecord(
+'x_1902481_employ_0_employee'
+);
+
+if(gr.get(sysId)){
+
+data.name=
+gr.first_name.toString();
+
+data.designation=
+
+gr.designation?gr.designation.getDisplayValue()
+
+:
+
+'';
+
+data.status=
+
+gr.getValue(
+'status'
+);
+
+data.status_label=
+
+gr.getDisplayValue(
+'status'
+);
+
+data.initial=
+
+data.name
+.charAt(0);
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 16:07:03</sys_created_on>
+        <sys_id>0a7a130783590310c07df0d6feaad3be</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>employee profile hero</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_0a7a130783590310c07df0d6feaad3be</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 10:52:43</sys_updated_on>
+        <template><![CDATA[<div class="employee-hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<div class="avatar">
+{{data.initial}}
+</div>
+
+<div class="hero-details">
+
+<div class="employee-name">
+{{data.name}}
+</div>
+
+<div class="designation">
+{{data.designation}}
+</div>
+
+<div
+class="status"
+
+ng-class="{
+
+'active':
+data.status=='active',
+
+'inactive':
+data.status=='inactive',
+
+'leave':
+data.status=='on_leave'
+
+}">
+
+<span class="dot"></span>
+
+{{data.status_label}}
+
+</div>
+
+</div>
+
+</div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>0a7a130783590310c07df0d6feaad3be</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 16:07:03</sys_created_on>
+        <sys_id>ca7a930783dd0310c07df0d6feaad310</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 16:07:03</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

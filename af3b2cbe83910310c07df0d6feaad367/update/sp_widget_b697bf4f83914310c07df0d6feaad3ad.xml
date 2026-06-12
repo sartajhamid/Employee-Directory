@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.stat-card{
+background:white;
+
+border-radius:26px;
+
+padding:34px;
+
+height:190px;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+0 18px 40px rgba(0,0,0,.06);
+
+display:flex;
+
+align-items:center;
+
+gap:24px;
+
+border-left:6px solid var(--accent);
+}
+
+.circle{
+position:absolute;
+
+right:-60px;
+
+bottom:-60px;
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+background:var(--accent);
+
+opacity:.08;
+}
+
+.icon-box{
+
+width:78px;
+
+height:78px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
+background:var(--accent);
+
+color:white;
+
+}
+
+.stat-value{
+
+font-size:58px;
+
+font-weight:900;
+
+color:#07184A;
+
+line-height:1;
+}
+
+.stat-label{
+
+margin-top:8px;
+
+font-size:22px;
+
+font-weight:700;
+
+color:#7D89B0;
+}
+
+/* variations */
+
+.employees{
+--accent:#2F62F5;
+}
+
+.departments{
+--accent:#00B87A;
+}
+
+.active{
+--accent:#FF9F1C;
+}
+
+.inactive{
+--accent:#A259FF;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>dashboard_stats</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>dashboard stats</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+var type =
+$sp.getParameter('type') ||
+options.type ||
+'employees';
+
+data.value=0;
+
+var emp =
+'x_1902481_employ_0_employee';
+
+if(type=="employees"){
+
+var ga=
+new GlideAggregate(emp);
+
+ga.addAggregate('COUNT');
+
+ga.query();
+
+if(ga.next())
+data.value=
+ga.getAggregate('COUNT');
+
+data.label=
+'Employees';
+
+data.icon=']]>👥<![CDATA[';
+
+data.class='employees';
+
+}
+
+else if(type=="departments"){
+
+var dept=
+new GlideAggregate(
+'x_1902481_employ_0_department'
+);
+
+dept.addAggregate('COUNT');
+
+dept.query();
+
+if(dept.next())
+data.value=
+dept.getAggregate('COUNT');
+
+data.label=
+'Departments';
+
+data.icon=']]>🏢<![CDATA[';
+
+data.class='departments';
+
+}
+
+else if(type=="active"){
+
+var gr=
+new GlideAggregate(emp);
+
+gr.addQuery(
+'active',
+true
+);
+
+gr.addAggregate('COUNT');
+
+gr.query();
+
+if(gr.next())
+data.value=
+gr.getAggregate('COUNT');
+
+data.label=
+'Active';
+
+data.icon=']]>🟢<![CDATA[';
+
+data.class='active';
+
+}
+
+else{
+
+var gr=
+new GlideAggregate(emp);
+
+gr.addQuery(
+'active',
+false
+);
+
+gr.addAggregate('COUNT');
+
+gr.query();
+
+if(gr.next())
+data.value=
+gr.getAggregate('COUNT');
+
+data.label=
+'Inactive';
+
+data.icon=']]>🔴<![CDATA[';
+
+data.class='inactive';
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 18:14:22</sys_created_on>
+        <sys_id>b697bf4f83914310c07df0d6feaad3ad</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>dashboard stats</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_b697bf4f83914310c07df0d6feaad3ad</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 18:32:08</sys_updated_on>
+        <template><![CDATA[<div class="stat-card {{data.class}}">
+
+<div class="icon-box">
+{{data.icon}}
+</div>
+
+<div class="stat-data">
+
+<div class="stat-value">
+{{data.value}}
+</div>
+
+<div class="stat-label">
+{{data.label}}
+</div>
+
+</div>
+
+<div class="circle"></div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>b697bf4f83914310c07df0d6feaad3ad</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 18:14:22</sys_created_on>
+        <sys_id>0f97bf4f83914310c07df0d6feaad3b1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 18:14:22</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

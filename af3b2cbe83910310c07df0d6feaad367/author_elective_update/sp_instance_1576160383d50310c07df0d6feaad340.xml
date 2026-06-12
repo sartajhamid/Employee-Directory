@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <advanced_placeholder_dimensions>false</advanced_placeholder_dimensions>
+        <async_load>false</async_load>
+        <async_load_device_type>desktop,tablet,mobile</async_load_device_type>
+        <async_load_trigger>viewport</async_load_trigger>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <placeholder_dimensions>{&#13;	"mobile": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"desktop": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"tablet": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	}&#13;}</placeholder_dimensions>
+        <placeholder_dimensions_script><![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]></placeholder_dimensions_script>
+        <placeholder_template>&lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&lt;div ng-if="options.maxRowCount === 10"&gt;&lt;/div&gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&gt;
+	&lt;div class="skeleton-container"&gt;
+	&lt;!-- Header Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-header"&gt;&lt;/div&gt;
+	&lt;!-- Body Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-line"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line small"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line medium"&gt;&lt;/div&gt;
+&lt;/div&gt;</placeholder_template>
+        <preserve_placeholder_size>false</preserve_placeholder_size>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">a956decf83950310c07df0d6feaad31f</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 11:09:55</sys_created_on>
+        <sys_id>1576160383d50310c07df0d6feaad340</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>profile card</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_instance_1576160383d50310c07df0d6feaad340</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 11:19:16</sys_updated_on>
+        <title>profile card</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<div class=\"employee-hero\">\r\n<div class=\"hero-left\">\r\n<h1 class=\"avatar\">{{data.first_name.substring(0,1)}}</h1>\r\n<div class=\"hero-info\">\r\n<div class=\"employee-name\">{{data.first_name}}</div>\r\n<div class=\"designation\">{{data.designation}}</div>\r\n<div class=\"status\">{{data.active ? 'Active Employee' : 'Inactive'}}</div>\r\n</div>\r\n</div>\r\n</div>",
+		"displayValue": "<div class=\"employee-hero\">\n<div class=\"hero-left\">\n<h1 class=\"avatar\">{{data.first_name.substring(0,1)}}</h1>\n<div class=\"hero-info\">\n<div class=\"employee-name\">{{data.first_name}}</div>\n<div class=\"designation\">{{data.designation}}</div>\n<div class=\"status\">{{data.active ? 'Active Employee' : 'Inactive'}}</div>\n</div>\n</div>\n</div>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=1576160383d50310c07df0d6feaad340"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</application>
+        <file_path/>
+        <instance_id>5a136ac0ebbfcad4cbdefceacad0cd90</instance_id>
+        <instance_name>dev282697</instance_name>
+        <name>sp_instance_1576160383d50310c07df0d6feaad340</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;advanced_placeholder_dimensions&gt;false&lt;/advanced_placeholder_dimensions&gt;&lt;async_load&gt;false&lt;/async_load&gt;&lt;async_load_device_type&gt;desktop,tablet,mobile&lt;/async_load_device_type&gt;&lt;async_load_trigger&gt;viewport&lt;/async_load_trigger&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;placeholder_dimensions&gt;{&amp;#13;	"mobile": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	},&amp;#13;	"desktop": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	},&amp;#13;	"tablet": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	}&amp;#13;}&lt;/placeholder_dimensions&gt;&lt;placeholder_dimensions_script&gt;&lt;![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]&gt;&lt;/placeholder_dimensions_script&gt;&lt;placeholder_template&gt;&amp;lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&amp;lt;div ng-if="options.maxRowCount === 10"&amp;gt;&amp;lt;/div&amp;gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&amp;gt;
+	&amp;lt;div class="skeleton-container"&amp;gt;
+	&amp;lt;!-- Header Skeleton --&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-header"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;!-- Body Skeleton --&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line small"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line medium"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/placeholder_template&gt;&lt;preserve_placeholder_size&gt;false&lt;/preserve_placeholder_size&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;a956decf83950310c07df0d6feaad31f&lt;/sp_column&gt;&lt;sp_widget display_value="HTML"&gt;8679ef89cb21120000f8d856634c9c4f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-10 11:09:55&lt;/sys_created_on&gt;&lt;sys_id&gt;1576160383d50310c07df0d6feaad340&lt;/sys_id&gt;&lt;sys_mod_count&gt;11&lt;/sys_mod_count&gt;&lt;sys_name&gt;profile card&lt;/sys_name&gt;&lt;sys_package display_value="Employee Management" source="x_1902481_employ_0"&gt;af3b2cbe83910310c07df0d6feaad367&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Employee Management"&gt;af3b2cbe83910310c07df0d6feaad367&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_1576160383d50310c07df0d6feaad340&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-10 11:19:16&lt;/sys_updated_on&gt;&lt;title&gt;profile card&lt;/title&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"html": {
+		"value": "&lt;div class=\"employee-hero\"&gt;\r\n&lt;div class=\"hero-left\"&gt;\r\n&lt;h1 class=\"avatar\"&gt;{{data.first_name.substring(0,1)}}&lt;/h1&gt;\r\n&lt;div class=\"hero-info\"&gt;\r\n&lt;div class=\"employee-name\"&gt;{{data.first_name}}&lt;/div&gt;\r\n&lt;div class=\"designation\"&gt;{{data.designation}}&lt;/div&gt;\r\n&lt;div class=\"status\"&gt;{{data.active ? 'Active Employee' : 'Inactive'}}&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;",
+		"displayValue": "&lt;div class=\"employee-hero\"&gt;\n&lt;div class=\"hero-left\"&gt;\n&lt;h1 class=\"avatar\"&gt;{{data.first_name.substring(0,1)}}&lt;/h1&gt;\n&lt;div class=\"hero-info\"&gt;\n&lt;div class=\"employee-name\"&gt;{{data.first_name}}&lt;/div&gt;\n&lt;div class=\"designation\"&gt;{{data.designation}}&lt;/div&gt;\n&lt;div class=\"status\"&gt;{{data.active ? 'Active Employee' : 'Inactive'}}&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=1576160383d50310c07df0d6feaad340"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1997910753</payload_hash>
+        <record_name>profile card</record_name>
+        <reverted_from/>
+        <source>bb3b2cbe83910310c07df0d6feaad3bb</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 11:19:16</sys_created_on>
+        <sys_id>52981a0783d50310c07df0d6feaad3c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19eb1420c410000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 11:19:16</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>d298decb2c950310f83b93fcfbbcb167</update_guid>
+        <update_guid_history>d298decb2c950310f83b93fcfbbcb167:-1997910753,0388d60781d5031074cf90cc93987333:776365171,bb78560746d50310df8dc8a06be5018d:-1997910753,89789207e4d50310915f9a3184360fc5:-1468480525,f168920762d50310fb60b39bf5bf8503:1506711589,8a58dec33fd5031028fb101933dec5e0:780978249,c92816c3e6d503102ffa6a8bd09192c6:-650019621,13f716c3a5d50310f6343c18d84b975d:-1415755924,9cf7de8311d5031002594117d419f3d9:49144286,abc79a83e8d5031073790acb7ff5c4ff:610933018,d987de8bf0950310e9f7d5c5058dfa82:-1415755924,d9761603c6d503103914c317e3b93b43:-1438929532</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="profile card">cdcc970b83dd0310c07df0d6feaad3ea</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 16:17:06</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>c23ce4af8ffa402e952fcaeb103f4ea9</sys_id>
+        <sys_metadata>1576160383d50310c07df0d6feaad340</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>profile card</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_scope_delete display_value="">2bfc7689130e47efa9643babe13d2c01</sys_scope_delete>
+        <sys_update_name>sp_instance_1576160383d50310c07df0d6feaad340</sys_update_name>
+        <sys_update_version display_value="sp_instance_1576160383d50310c07df0d6feaad340">52981a0783d50310c07df0d6feaad3c1</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 16:17:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

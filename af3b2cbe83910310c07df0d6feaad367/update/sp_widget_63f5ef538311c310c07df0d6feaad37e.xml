@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($window){
+
+var c=this;
+
+c.departmentSearch='';
+
+
+
+c.explore=function(){
+
+if(!c.departmentSearch)
+return;
+
+
+
+$window.location.href =
+'/ev?id=department'+'&department='+encodeURIComponent(c.departmentSearch);
+
+};
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.department-hero{
+
+position:relative;
+
+overflow:hidden;
+
+min-height:420px;
+
+border-radius:
+0 0 36px 36px;
+
+background:
+linear-gradient(
+135deg,
+#041734,
+#2148D2,
+#5A82FF
+);
+
+padding:56px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:40px;
+
+color:white;
+
+}
+
+
+
+/* OVERLAY */
+
+.hero-overlay{
+
+position:absolute;
+
+right:-150px;
+
+top:-120px;
+
+width:460px;
+
+height:460px;
+
+border-radius:50%;
+
+background:
+rgba(
+255,
+255,
+255,
+.06
+);
+
+}
+
+
+
+/* LEFT */
+
+.hero-left{
+
+flex:1;
+
+max-width:620px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+/* BADGE */
+
+.hero-badge{
+
+display:inline-flex;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:
+rgba(
+255,
+255,
+255,
+.10
+);
+
+font-size:10px;
+
+font-weight:800;
+
+letter-spacing:1.5px;
+
+}
+
+
+
+/* TITLE */
+
+.hero-left h1{
+
+margin-top:24px;
+
+font-size:58px;
+
+line-height:1.05;
+
+font-weight:900;
+
+}
+
+
+
+/* TEXT */
+
+.hero-left p{
+
+margin-top:18px;
+
+font-size:18px;
+
+line-height:1.8;
+
+opacity:.92;
+
+max-width:520px;
+
+}
+
+
+
+/* ACTION AREA */
+
+.hero-actions{
+
+margin-top:26px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+
+
+/* BACK */
+
+.back-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:140px;
+
+height:50px;
+
+border-radius:16px;
+
+background:
+rgba(
+255,
+255,
+255,
+.12
+);
+
+backdrop-filter:
+blur(20px);
+
+text-decoration:none;
+
+color:white;
+
+font-size:13px;
+
+font-weight:800;
+
+transition:.25s;
+
+}
+
+
+.back-btn:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+
+/* RIGHT */
+
+.hero-right{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+.stat-card{
+
+width:190px;
+
+height:180px;
+
+border-radius:26px;
+
+background:
+rgba(
+255,
+255,
+255,
+.12
+);
+
+backdrop-filter:
+blur(20px);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+}
+
+
+
+.small{
+
+height:140px;
+
+}
+
+
+
+.stat-number{
+
+font-size:52px;
+
+font-weight:900;
+
+}
+
+
+
+.stat-text{
+
+margin-top:8px;
+
+font-size:15px;
+
+}
+
+
+
+/* TABLET */
+
+@media(max-width:900px){
+
+.department-hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding:42px 30px;
+
+min-height:auto;
+
+}
+
+.hero-left{
+
+max-width:100%;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+.hero-left p{
+
+font-size:15px;
+
+margin:auto;
+
+}
+
+.hero-actions{
+
+align-items:center;
+
+}
+
+.hero-search{
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+.hero-search input,
+.hero-search button{
+
+width:100%;
+
+}
+
+.hero-right{
+
+flex-direction:row;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.department-hero{
+
+padding:30px 18px;
+
+}
+
+.hero-left h1{
+
+font-size:32px;
+
+}
+
+.hero-left p{
+
+font-size:13px;
+
+}
+
+.hero-search input,
+.hero-search button{
+
+height:48px;
+
+font-size:12px;
+
+}
+
+.back-btn{
+
+width:100%;
+
+}
+
+.stat-card{
+
+width:140px;
+
+height:130px;
+
+}
+
+.stat-number{
+
+font-size:36px;
+
+}
+
+.stat-text{
+
+font-size:12px;
+
+}
+
+.hero-overlay{
+
+width:260px;
+
+height:260px;
+
+}
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>department_hero</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>department hero</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+data.departments=0;
+
+data.employees=0;
+
+
+/* departments */
+
+var dep=
+new GlideAggregate(
+'x_1902481_employ_0_department'
+);
+
+dep.addAggregate(
+'COUNT'
+);
+
+dep.query();
+
+if(dep.next()){
+
+data.departments=
+dep.getAggregate(
+'COUNT'
+);
+
+}
+
+
+/* employees */
+
+var emp=
+new GlideAggregate(
+'x_1902481_employ_0_employee'
+);
+
+emp.addAggregate(
+'COUNT'
+);
+
+emp.query();
+
+if(emp.next()){
+
+data.employees=
+emp.getAggregate(
+'COUNT'
+);
+
+}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 11:35:53</sys_created_on>
+        <sys_id>63f5ef538311c310c07df0d6feaad37e</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>department hero</sys_name>
+        <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>sp_widget_63f5ef538311c310c07df0d6feaad37e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 11:07:58</sys_updated_on>
+        <template><![CDATA[<div class="department-hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-left">
+
+<div class="hero-badge">
+DEPARTMENTS
+</div>
+
+<h1>
+Build Better Teams.
+</h1>
+
+<p>
+Organize departments, manage teams and
+track organization growth from one place.
+</p>
+
+
+<div class="hero-actions">
+
+<a
+class="back-btn"
+href="javascript:history.back()">
+
+← Back
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<div class="hero-right">
+
+<div class="stat-card">
+
+<div class="stat-number">
+{{data.departments}}
+</div>
+
+<div class="stat-text">
+Departments
+</div>
+
+</div>
+
+
+<div class="stat-card small">
+
+<div class="stat-number">
+{{data.employees}}
+</div>
+
+<div class="stat-text">
+Employees
+</div>
+
+</div>
+
+</div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>63f5ef538311c310c07df0d6feaad37e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 11:35:53</sys_created_on>
+        <sys_id>27f5ef538311c310c07df0d6feaad382</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 11:35:53</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
