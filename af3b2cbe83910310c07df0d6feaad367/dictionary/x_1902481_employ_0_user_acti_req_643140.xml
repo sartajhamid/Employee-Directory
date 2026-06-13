@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="08095d4483e50310c07df0d6feaad386" extends="user_activation_request" label="Employ 0 User Acti Req 643140" max_length="40" name="x_1902481_employ_0_user_acti_req_643140" type="collection"/>
+</database>

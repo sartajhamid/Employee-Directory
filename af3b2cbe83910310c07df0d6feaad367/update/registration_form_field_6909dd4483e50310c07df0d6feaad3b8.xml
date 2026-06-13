@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="registration_form_field">
+    <registration_form_field action="INSERT_OR_UPDATE">
+        <column_label>EDU Status</column_label>
+        <column_name>edu_status</column_name>
+        <custom_field>false</custom_field>
+        <display>false</display>
+        <mandatory>false</mandatory>
+        <order>10000</order>
+        <registration_configuration display_value="User Registration for Employee Valult">d2c8554483e50310c07df0d6feaad3e1</registration_configuration>
+        <sys_class_name>registration_form_field</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-13 09:15:26</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>6909dd4483e50310c07df0d6feaad3b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>EDU Status</sys_name>
+        <sys_package display_value="External User Self-Registration" source="com.snc.external_user_self_registration">6c8491c083a50310c07df0d6feaad398</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
+        <sys_update_name>registration_form_field_6909dd4483e50310c07df0d6feaad3b8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-13 09:15:26</sys_updated_on>
+        <type>5</type>
+        <validation_only>false</validation_only>
+    </registration_form_field>
+</record_update>
