@@ -1,7 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
     <sp_page action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <css/>
+        <css>.container,
+.container-fluid {
+
+background:
+linear-gradient(
+180deg,
+#F3F6FB 0%,
+#EDF2F8 100%
+);
+
+padding-top:0 !important;
+
+padding-left:0 !important;
+
+padding-right:0 !important;
+
+max-width:100% !important;
+
+}
+
+.sp-row{
+
+margin-top:10px !important;
+
+margin-bottom:10px !important;
+
+margin-left:0 !important;
+
+margin-right:0 !important;
+
+padding:0 !important;
+
+}
+/* REMOVE COLUMN INNER SPACE */
+
+.sp-column{
+
+padding-left:0 !important;
+
+padding-right:0 !important;
+
+}
+/* SPACE BETWEEN WIDGET CONTAINERS */
+
+.sp-column &gt; .panel,
+.sp-column &gt; .sp-widget{
+
+margin-bottom:24px !important;
+
+}
+
+
+/* SPACE BETWEEN ROWS */
+
+.sp-row + .sp-row{
+
+margin-top:24px !important;
+
+}
+
+
+/* PREVENT BOOTSTRAP PANEL COLLAPSE */
+
+.panel{
+
+margin-bottom:0 !important;
+
+}</css>
         <draft>false</draft>
         <dynamic_title_structure/>
         <human_readable_url_structure/>
@@ -16,14 +83,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-06-10 11:09:07</sys_created_on>
         <sys_id>fd465ecf83950310c07df0d6feaad3ef</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>employee_profile_details</sys_name>
         <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
         <sys_policy/>
         <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
         <sys_update_name>sp_page_fd465ecf83950310c07df0d6feaad3ef</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-10 11:09:07</sys_updated_on>
+        <sys_updated_on>2026-06-13 06:04:06</sys_updated_on>
         <title>Employee Profile Details</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>

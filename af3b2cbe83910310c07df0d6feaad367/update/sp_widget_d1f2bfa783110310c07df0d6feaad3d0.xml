@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller=function($scope){
+    var c=this;
+    c.filtered=angular.copy(c.data.departments||[]);
+
+    $scope.$watch(
+        function(){
+            return $scope.page.deptSearch;
+        },
+        function(text){
+            var search=(text||'').toLowerCase();
+            if(!search){
+                c.filtered=angular.copy(c.data.departments||[]);
+            } else {
+                c.filtered=c.data.departments.filter(function(dept){
+                    return (dept.name||'').toLowerCase().indexOf(search)>-1 ||
+                           (dept.description||'').toLowerCase().indexOf(search)>-1;
+                });
+            }
+        }
+    );
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>/* ===========================
    DEPARTMENT GRID
@@ -9,7 +29,7 @@
 
 .department-grid{
 
-margin-top:42px;
+margin-top:20px;
 
 display:grid;
 
@@ -22,7 +42,7 @@ minmax(
 )
 );
 
-gap:28px;
+gap:20px;
 
 align-items:stretch;
 
@@ -39,7 +59,7 @@ align-items:stretch;
 background:#FFFFFF;
 
 border-radius:30px;
-
+border: 1px solid grey;
 padding:30px;
 
 min-height:360px;
@@ -159,9 +179,9 @@ z-index:2;
 
 margin-top:24px;
 
-font-size:34px;
+font-size:25px;
 
-font-weight:900;
+font-weight:800;
 
 color:#07195A;
 
@@ -185,9 +205,9 @@ word-break:break-word;
 
 margin-top:14px;
 
-font-size:18px;
+font-size:15px;
 
-font-weight:800;
+font-weight:700;
 
 color:#2F62F5;
 
@@ -207,7 +227,7 @@ z-index:2;
 
 margin-top:18px;
 
-font-size:16px;
+font-size:14px;
 
 line-height:1.8;
 
@@ -250,9 +270,9 @@ linear-gradient(
 
 color:white !important;
 
-font-size:16px;
+font-size:15px;
 
-font-weight:800;
+font-weight:700;
 
 text-decoration:none !important;
 
@@ -442,145 +462,61 @@ font-size:20px;
         <public>false</public>
         <roles/>
         <script><![CDATA[(function(){
+    data.departments = [];
 
-data.departments = [];
+    var dep = new GlideRecord('x_1902481_employ_0_department');
+    dep.orderBy('department_name');
+    dep.query();
+    while(dep.next()){
 
-/*
-STEP 1:
-Get all departments
-*/
+        var deptName = dep.getValue('department_name') || 'Unnamed Department';
+        var employeeCount = 0;
 
-var dep =
-new GlideRecord(
-'x_1902481_employ_0_department'
-);
+        // Count by department NAME since we store name directly now
+        var emp = new GlideAggregate('x_1902481_employ_0_employee');
+        emp.addQuery('department', deptName);
+        emp.addAggregate('COUNT');
+        emp.query();
+        if(emp.next()){
+            employeeCount = parseInt(emp.getAggregate('COUNT'), 10);
+        }
 
-dep.orderBy(
-'department_name'
-);
-
-dep.query();
-
-while(dep.next()){
-
-var employeeCount = 0;
-
-/*
-STEP 2:
-Count employees
-using department sys_id
-*/
-
-var emp =
-new GlideAggregate(
-'x_1902481_employ_0_employee'
-);
-
-emp.addQuery(
-'department',
-dep.getUniqueValue()
-);
-
-emp.addAggregate(
-'COUNT'
-);
-
-emp.query();
-
-if(emp.next()){
-
-employeeCount =
-parseInt(
-emp.getAggregate(
-'COUNT'
-),
-10
-);
-
-}
-
-data.departments.push({
-
-sys_id:
-dep.getUniqueValue(),
-
-name:
-
-dep.getValue(
-'department_name'
-)||
-
-'Unnamed Department',
-
-description:
-
-dep.getValue(
-'description'
-)||
-
-'Department overview',
-
-employee_count:
-
-employeeCount
-
-});
-
-}
-
+        data.departments.push({
+            sys_id: dep.getUniqueValue(),
+            name: deptName,
+            description: dep.getValue('description') || 'Department overview',
+            employee_count: employeeCount
+        });
+    }
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-06-12 07:11:00</sys_created_on>
         <sys_id>d1f2bfa783110310c07df0d6feaad3d0</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_name>department grid</sys_name>
         <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
         <sys_policy/>
         <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
         <sys_update_name>sp_widget_d1f2bfa783110310c07df0d6feaad3d0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-12 09:27:47</sys_updated_on>
+        <sys_updated_on>2026-06-13 07:04:02</sys_updated_on>
         <template><![CDATA[<div class="department-grid">
-
-<div
-class="department-card"
-ng-repeat="dept in data.departments track by dept.sys_id">
-
-<div class="dept-icon">
-]]>🏢
-<![CDATA[</div>
-
-<div class="dept-name">
-{{dept.name}}
-</div>
-
-<div class="dept-count">
-{{dept.employee_count}} Employees
-</div>
-
-<div class="dept-desc">
-{{dept.description}}
-</div>
-
-<a
-class="dept-btn"
-ng-href="?id=department_profile&sys_id={{dept.sys_id}}">
-Open Department
-</a>
-
-</div>
-
-
-<div
-class="empty"
-ng-if="data.departments.length===0">
-
-No departments found
-
-</div>
-
+  <div
+    class="department-card"
+    ng-repeat="dept in c.filtered track by dept.sys_id">
+    <div class="dept-icon">]]>🏢<![CDATA[</div>
+    <div class="dept-name">{{dept.name}}</div>
+    <div class="dept-count">{{dept.employee_count}} Employees</div>
+    <div class="dept-desc">{{dept.description}}</div>
+    <a class="dept-btn" ng-href="?id=department_profile&sys_id={{dept.sys_id}}">
+      Open Department
+    </a>
+  </div>
+  <div class="empty" ng-if="c.filtered.length===0">
+    No departments found
+  </div>
 </div>]]></template>
     </sp_widget>
     <sys_es_latest_script action="INSERT_OR_UPDATE">

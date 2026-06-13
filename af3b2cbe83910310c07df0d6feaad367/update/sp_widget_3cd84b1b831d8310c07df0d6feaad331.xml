@@ -2,90 +2,46 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller=function($scope){
+    var c=this;
+    c.filtered=angular.copy(c.data.employees||[]);
 
-var c=this;
+    $scope.$on('filters.reset', function(){
+        c.filtered=angular.copy(c.data.employees||[]);
+    });
 
-c.filtered=
-angular.copy(
-c.data.employees||[]
-);
+    $scope.$watch(
+        function(){
+            return [
+                $scope.page.searchText,
+                $scope.page.department,
+                $scope.page.status
+            ];
+        },
+        function(){
+            var text=($scope.page.searchText||'').toLowerCase();
+            var dept=$scope.page.department||'';
+            var status=$scope.page.status||'';
 
-$scope.$watch(
+            c.filtered=c.data.employees.filter(function(emp){
 
-function(){
+                var textMatch=
+                    !text ||
+                    (emp.name||'').toLowerCase().indexOf(text)>-1 ||
+                    (emp.designation||'').toLowerCase().indexOf(text)>-1;
 
-return [
+                var deptMatch=
+                    !dept ||
+                    emp.department===dept;
 
-$scope.page.searchText,
+                var statusMatch=
+                    !status ||
+                    (emp.status||'').toLowerCase()===status.toLowerCase();
 
-$scope.page.department,
-
-$scope.page.status
-
-];
-
-},
-
-function(){
-
-var text=
-($scope.page.searchText||'')
-.toLowerCase();
-
-var dept=
-$scope.page.department||'';
-
-var status=
-$scope.page.status||'';
-
-c.filtered=
-c.data.employees.filter(
-
-function(emp){
-
-var textMatch=
-
-!text ||
-
-(emp.name||'')
-.toLowerCase()
-.indexOf(text)>-1 ||
-
-(emp.designation||'')
-.toLowerCase()
-.indexOf(text)>-1;
-
-var deptMatch=
-
-!dept ||
-
-emp.department==
-dept;
-
-var statusMatch=
-
-!status ||
-
-(emp.status||'')
-.toLowerCase()===(status||'').toLowerCase();
-return (
-
-textMatch &&
-deptMatch &&
-statusMatch
-
-);
-
-}
-
-);
-
-},
-
-true
-
-);
-
+                return textMatch && deptMatch && statusMatch;
+            });
+        },
+        true
+    );
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>.directory-grid{
@@ -101,7 +57,8 @@ minmax(
 )
 );
 
-gap:28px;
+gap:15px;
+margin-top:10px;
 
 }
 
@@ -114,6 +71,8 @@ background:white;
 padding:30px;
 
 border-radius:28px;
+  
+border: 0.3px solid grey;
 
 box-shadow:
 
@@ -265,66 +224,38 @@ color:
         <public>false</public>
         <roles/>
         <script><![CDATA[(function(){
-
-data.employees=[];
-
-var gr=
-new GlideRecord(
-'x_1902481_employ_0_employee'
-);
-
-gr.orderBy(
-'name'
-);
-
-gr.query();
-
-while(
-gr.next()
-){
-
-var emp=
-gr.getDisplayValue();
-
-data.employees.push({
-
-sys_id:
-gr.getUniqueValue(),
-
-name:
-emp,
-
-designation:
-gr.getDisplayValue(
-'designation'
-),
-
-department:
-gr.getDisplayValue(
-'department'
-),
-
-initial:
-(emp.charAt(0)||'E')
-
-});
-
-}
-
+    data.employees=[];
+    var gr=
+        new GlideRecord(
+            'x_1902481_employ_0_employee'
+        );
+    gr.orderBy('name');
+    gr.query();
+    while(gr.next()){
+        var emp=gr.getDisplayValue();
+        data.employees.push({
+            sys_id: gr.getUniqueValue(),
+            name: emp,
+            designation: gr.getDisplayValue('designation'),
+            department: gr.getDisplayValue('department'),
+            status: gr.getValue('status'),
+            initial: (emp.charAt(0)||'E')
+        });
+    }
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-06-11 09:28:27</sys_created_on>
         <sys_id>3cd84b1b831d8310c07df0d6feaad331</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>directory employee grid</sys_name>
         <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
         <sys_policy/>
         <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
         <sys_update_name>sp_widget_3cd84b1b831d8310c07df0d6feaad331</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-11 10:28:55</sys_updated_on>
+        <sys_updated_on>2026-06-12 18:23:48</sys_updated_on>
         <template><![CDATA[<div class="directory-grid">
 
 <div

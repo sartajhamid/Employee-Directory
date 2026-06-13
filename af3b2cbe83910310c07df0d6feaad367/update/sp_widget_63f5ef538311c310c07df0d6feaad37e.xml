@@ -32,7 +32,7 @@ overflow:hidden;
 min-height:420px;
 
 border-radius:
-0 0 36px 36px;
+30px 30px 30px 30px;
 
 background:
 linear-gradient(
@@ -136,7 +136,7 @@ letter-spacing:1.5px;
 
 margin-top:24px;
 
-font-size:58px;
+font-size:48px;
 
 line-height:1.05;
 
@@ -152,7 +152,7 @@ font-weight:900;
 
 margin-top:18px;
 
-font-size:18px;
+font-size:15px;
 
 line-height:1.8;
 
@@ -287,7 +287,7 @@ height:140px;
 
 .stat-number{
 
-font-size:52px;
+font-size:48px;
 
 font-weight:900;
 
@@ -513,14 +513,14 @@ emp.getAggregate(
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-06-11 11:35:53</sys_created_on>
         <sys_id>63f5ef538311c310c07df0d6feaad37e</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>department hero</sys_name>
         <sys_package display_value="Employee Management" source="x_1902481_employ_0">af3b2cbe83910310c07df0d6feaad367</sys_package>
         <sys_policy/>
         <sys_scope display_value="Employee Management">af3b2cbe83910310c07df0d6feaad367</sys_scope>
         <sys_update_name>sp_widget_63f5ef538311c310c07df0d6feaad37e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-12 11:07:58</sys_updated_on>
+        <sys_updated_on>2026-06-13 07:05:54</sys_updated_on>
         <template><![CDATA[<div class="department-hero">
 
 <div class="hero-overlay"></div>
